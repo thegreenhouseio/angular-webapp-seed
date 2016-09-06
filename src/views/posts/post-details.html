@@ -1,0 +1,24 @@
+<section class="col-xs-12">
+
+  <div class="post-details">
+
+    <div class="row">
+
+      <div class="col-xs-2">
+        <!-- random example of a glyficon -->
+        <i class="glyphicon glyphicon-calendar cal-icon"></i>
+      </div>
+
+      <div class="col-xs-10">
+        <div *ngIf="getPostDetails()">
+          <p>Post Title: {{ getPostDetails().title }}</p>
+          <p>Post Summary:<p>
+          <p [innerHTML]="getPostDetails().summary"></p>
+          <p>Post Created Time: {{ (getPostDetails().createdTime * 1000) | date : 'EEEE, MMMM d, yyyy, h:mm a' }}</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

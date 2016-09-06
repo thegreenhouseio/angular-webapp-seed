@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostInterface, PostsService  } from '../../services/posts.service';
 
 @Component({
-  selector: 'as-posts-list',
+  selector: 'seed-posts-list',
   templateUrl: './posts-list.html',
   styleUrls: [ './posts-list.less' ]
 })
@@ -17,7 +17,7 @@ export class PostsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.posts = this.PostsService.getPosts();
+    this.posts = this.PostsService.getPosts(null);
   }
 
   getMaxPosts(): number {
