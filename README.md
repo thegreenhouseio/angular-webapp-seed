@@ -1,19 +1,21 @@
 # angular2-webpack-seed (seed-webapp-1.0)
 Angular 2 and Webpack Seed Project for The Greenhouse, as a template / starter project for frontend web applications.
 This is a simple starter project meant to get you up and running as fast as possible with a full local and production 
-build with all the tools working together.  Simply clone the repo and edit the files as needed to match your project,
-like:
+build with all the tools working together.  Simply clone the repo and edit the files as needed to match your project.
 
-- this README.md (project name, Links, release procedure, CI, etc)
-- fields in package.json
+## Setup
+- _README.md_ - project name, Links, sections on release procedure, CI, AWS info
+- _gulpfile.babel.js_ - API proxy
+- _package.json_ - name, description, version
+- _karma.conf.js_ - jUnitReporter suite name
+- Configure your project with continuous integration by running _bin/build.sh_
 
-## Assumptions / Setup
 //TODO - discuss environment variables, continuous integration, AWS keys, build scripts
 
 ## Tooling
 The following tools are used in the application
 
-- [Angular 2][] - as the Front-End framework
+- [Angular 2][] (rc5) - as the Front-End framework
 - [Webpack 1.13][] - Module loader / bundler, primary build tool
 - [Node 4.4.x][]  - local development and build time JavaScript runtime
 - [NPM 3.8.x][]  - package manager for build and application dependencies
@@ -142,6 +144,8 @@ section of _package.json_
 ### Development
 This will start up a Node (Express) server which watches for changes and "redeploys" as needed.
 
+**Note: This task exports** `NODE_ENV=development`
+
 ```
 $ npm run develop
 ```
@@ -153,14 +157,19 @@ http://localhost:6789/
 ```
 
 ### Production
-This is the production build task for the project.  It is used prior to deploying to an environment and bundles the
-application and runs unit tests.
+This is the production build task for the project.  It is used prior to deploying to an environment and build a 
+production version of the application.
+
+**Note: This task exports** `NODE_ENV=production`
 
 ```
 $ npm run build
 ```
 
-###
+### Continuus Integration
+
+
+### Demo
 To serve a production build locally , like for a demo run:
 
 ```
