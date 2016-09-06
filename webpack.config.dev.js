@@ -57,7 +57,7 @@ module.exports = webpackMerge(commonConfig, {
     outputPath: __dirname + '/build',
     proxy:{
       '/api/*': {
-        target: 'http://analogstudios.thegreenhouse.io',
+        target: 'http://<your-domain>',
         secure: false,
         changeOrigin: true
       }

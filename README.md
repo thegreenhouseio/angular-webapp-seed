@@ -14,6 +14,7 @@ around the internet.
 - _gulpfile.babel.js_ - API proxy
 - _package.json_ - name, description, version
 - _karma.conf.js_ - jUnitReporter suite name
+- _webpack.config.dev.js - devServer proxy value
 - Configure your project with continuous integration by running _bin/build.sh_
 
 //TODO - discuss environment variables, continuous integration, AWS keys, build scripts
