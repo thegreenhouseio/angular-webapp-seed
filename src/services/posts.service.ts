@@ -14,7 +14,7 @@ export class PostsService {
   private posts: Array<PostInterface> = [{
     id: 1,
     title: 'Post 1 Title',
-    summary: 'Poat 1 Summary',
+    summary: '<p>Analog is playing at <a href="https://www.facebook.com/tankedatthetank" target="">The Tankard</a> this Saturday, with opening act Sean Daley.  Please come join as we prevew some of the new songs on the album.</p>',
     createdTime: 1472091258
   }, {
     id: 2,
@@ -31,7 +31,15 @@ export class PostsService {
   constructor(private http: Http) {
   }
 
-  public getPosts(): Array<PostInterface> {
+  public getPosts(postId: number): Array<PostInterface> {
+    if(postId){
+      for(let i = 0, l = this.posts.length; i < l; i++){
+        if(this.posts[i].id === postId){
+          return [this.posts[i]];
+        }
+      }
+    }
+
     return this.posts;
   }
 

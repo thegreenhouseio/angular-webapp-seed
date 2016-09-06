@@ -19,7 +19,7 @@ describe('First Test Suite', () => {
   });
 
   it('should test PostService get', () => {
-    let posts: Array<PostInterface> = new PostsService(Http).getPosts();
+    let posts: Array<PostInterface> = new PostsService(Http).getPosts(null);
 
     expect(PostsService).toBeDefined();
   });

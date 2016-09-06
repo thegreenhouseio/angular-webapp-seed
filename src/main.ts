@@ -10,6 +10,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { PostsService } from './services/posts.service';
 import { RouterModule } from '@angular/router';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
+import { PostsViewComponent } from './views/posts/posts.component'
+import { PostDetailsViewComponent } from './views/posts/post-details.component';
 
 @NgModule({
   imports: [ //modules
@@ -22,6 +24,8 @@ import { PostsListComponent } from './components/posts-list/posts-list.component
     FooterComponent,
     HeaderComponent,
     HomeViewComponent,
+    PostsViewComponent,
+    PostDetailsViewComponent,
     BootstrapComponent
   ],
   bootstrap: [ BootstrapComponent ],  //root component
