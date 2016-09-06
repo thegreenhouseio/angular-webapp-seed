@@ -1,7 +1,13 @@
 # angular2-webpack-seed (seed-webapp-1.0)
 Angular 2 and Webpack Seed Project for The Greenhouse, as a template / starter project for frontend web applications.
 This is a simple starter project meant to get you up and running as fast as possible with a full local and production 
-build with all the tools working together.  Simply clone the repo and edit the files as needed to match your project.
+build with all the tools working together and as minimal friction and configuration as possible.  Simply clone the 
+repo and edit the files as needed to match your project.
+
+This was based on the excellent starter [AngularClass/angular2-webpack-starter] as well as many other resources 
+around the internet.
+
+[AngularClass/angular2-webpack-starter]: https://github.com/AngularClass/angular2-webpack-starter
 
 ## Setup
 - _README.md_ - project name, Links, sections on release procedure, CI, AWS info
