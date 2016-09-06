@@ -7,6 +7,9 @@ repo and edit the files as needed to match your project.
 This was based on the excellent starter [AngularClass/angular2-webpack-starter] as well as many other resources 
 around the internet.
 
+**Note:**
+As this is primarily a JavaScript based repo, a principal motivation in the direction and maintenance of this starter repo will be in support of adoption of latest standards and specifications of ECMAScript.  For example, the decision to adopt Webpack now was done with the understanding that ES6 `imports` would be supported in the 2.0 release.  This project will always strive to work as close to the spec as possible to ensure the least amount of tools get in the way between your user's browser and the source code written.
+
 [AngularClass/angular2-webpack-starter]: https://github.com/AngularClass/angular2-webpack-starter
 
 ## Setup
