@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class FooterComponent {
-  private STARTING_YEAR: number = 2007;
+  private STARTING_YEAR: number = 2014;
   private currentYear: number;
 
   constructor(){
