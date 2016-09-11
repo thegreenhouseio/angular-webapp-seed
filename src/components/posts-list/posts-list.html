@@ -9,7 +9,7 @@
         <span class="post-time">{{ (post.createdTime * 1000) | date : 'EEEE, MMMM d, yyyy, h:mm a' }}</span>
       </h4>
 
-      <details class="post-summary">{{post.summary}}</details>
+      <details [innerHTML]="post.summary" class="post-summary"></details>
 
       <a [routerLink]="['/posts/' + post.id]">Click for full details</a>
 
