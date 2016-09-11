@@ -64,9 +64,6 @@ module.exports = {
       from: './node_modules/font-awesome/css/font-awesome.css',
       to: './assets/vendor/font-awesome.css'
     }, {  //TODO add using import?
-      from: './node_modules/bootstrap-social/bootstrap-social.css',
-      to: './assets/vendor/bootstrap-social.css'
-    }, {  //TODO add using import?
       context: './node_modules/bootstrap/dist/fonts/',
       from: '*',
       to: './assets/fonts/'  //bootstrap hardcoded path to fonts one directory up from the CSS... >:
@@ -74,10 +71,6 @@ module.exports = {
       context: './node_modules/font-awesome/fonts/',
       from: '*',
       to: './assets/fonts/'  //bootstrap hardcoded path to fonts one directory up from the CSS... >:
-    }, {  //TODO add using import?
-      context: './node_modules/ckeditor/',
-      from: '**/**',
-      to: './assets/vendor/ckeditor/'
     }]),
 
     new HtmlWebpackPlugin({
