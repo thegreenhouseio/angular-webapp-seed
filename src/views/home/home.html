@@ -9,6 +9,7 @@
 
       <p>Checkout our latest posts below, or all our posts over <a [routerLink]="['/posts']">here</a>!</p>
 
+
     </div>
   </div>
 
@@ -20,6 +21,24 @@
       </div>
 
     </div>
+  </div>
+
+  <div class="row">
+    <h2>Form Example</h2>
+    <p>Submit just outputs form (and values) to the console</p>
+
+    <form [formGroup]="userForm">
+
+      <label for="name">Name</label>
+      <input id="name" [formControl]="userForm.controls['name']" type="text"/>
+
+      <br/>
+      <p *ngIf="userForm.controls['name'].value">Welcome to the site, {{userForm.controls['name'].value}}!</p>
+
+      <button (click)="submitForm()" class="btn" type="submit">Submit</button>
+      <button class="btn" type="reset">Reset</button>
+
+    </form>
   </div>
 
 </section>
