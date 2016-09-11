@@ -1,14 +1,13 @@
-<section class="as-view-home row">
+<div class="container seed-view-home">
 
   <div class="row">
-    <div class="col-xs-10">
+    <div class="col-xs-12">
 
       <h2 class="welcome-text-heading">Welcome to The Greenhouse Webapp Seed project!</h2>
 
       <p class="welcome-text-body">This is a sample project to demonstrate a basic Angular 2 and Webpack build.</p>
 
       <p>Checkout our latest posts below, or all our posts over <a [routerLink]="['/posts']">here</a>!</p>
-
 
     </div>
   </div>
@@ -24,21 +23,25 @@
   </div>
 
   <div class="row">
-    <h2>Form Example</h2>
-    <p>Submit just outputs form (and values) to the console</p>
+    <div class="col-xs-12">
 
-    <form [formGroup]="userForm">
+      <h2>Form Example</h2>
+      <p>Submit just outputs form (and values) to the console</p>
 
-      <label for="name">Name</label>
-      <input id="name" [formControl]="userForm.controls['name']" type="text"/>
+      <form [formGroup]="userForm">
 
-      <br/>
-      <p *ngIf="userForm.controls['name'].value">Welcome to the site, {{userForm.controls['name'].value}}!</p>
+        <label for="name">Name</label>
+        <input id="name" [formControl]="userForm.controls['name']" type="text"/>
 
-      <button (click)="submitForm()" class="btn" type="submit">Submit</button>
-      <button class="btn" type="reset">Reset</button>
+        <br/>
+        <p *ngIf="userForm.controls['name'].value">Welcome to the site, {{userForm.controls['name'].value}}!</p>
 
-    </form>
+        <button (click)="submitForm()" class="btn" type="submit">Submit</button>
+        <button class="btn" type="reset">Reset</button>
+
+      </form>
+
+    </div>
   </div>
 
-</section>
+</div>
