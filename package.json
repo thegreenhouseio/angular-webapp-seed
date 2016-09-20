@@ -15,8 +15,8 @@
   ],
   "license": "UNLICENSED",
   "engines": {
-    "node": ">=4.4.x",
-    "npm": ">=3.8.x"
+    "node": ">=6.6.0",
+    "npm": ">=3.8.8"
   },
   "repository": {
     "type": "git",
