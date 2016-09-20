@@ -3,29 +3,29 @@
 //@import '../../../node_modules/bootstrap-social/bootstrap-social';
 
 //variables
-@white: #efefef;
-@black: #020202;
+$white: #efefef;
+$black: #020202;
 
-@primary: #6d0202;
-@bg-primary: #c2b08b;
-@bg-secondary: #ae996b;
-@bg-tertiary: #d3c6ae;
+$primary: #6d0202;
+$bg-primary: #c2b08b;
+$bg-secondary: #ae996b;
+$bg-tertiary: #d3c6ae;
 
-@font-family-primary: 'Oxygen', cursive;
-@font-color-primary: @white;
-@font-color-secondary: #316291;
+$font-family-primary: 'Oxygen', cursive;
+$font-color-primary: $white;
+$font-color-secondary: #316291;
 
 
 .app {
 
   a {
-    color: @white;
+    color: $white;
   }
 
   .page-container {
     margin: 0 auto;
     min-height: 500px;
-    background-color: @bg-primary;
+    background-color: $bg-primary;
   }
 
   .link {

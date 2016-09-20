@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'seed-webapp',
   templateUrl: './bootstrap.html',
-  styleUrls: [ './bootstrap.less' ]
+  styleUrls: [ './bootstrap.scss' ]
 })
 
 export class BootstrapComponent {}

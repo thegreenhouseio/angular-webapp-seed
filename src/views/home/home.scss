@@ -1,20 +1,20 @@
-@import (reference) '../../components/bootstrap/bootstrap';
+@import '../../components/bootstrap/bootstrap';
 
 .seed-view-home {
 
   margin-bottom: 15px;
 
   .welcome-text-heading {
-    color: @black;
+    color: $black;
     text-decoration: underline;
   }
 
   .welcome-text-body {
-    color: @black;
+    color: $black;
   }
 
   input {
-    color: @black
+    color: $black
   }
 
 }

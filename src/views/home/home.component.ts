@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'home',
   templateUrl: './home.html',
-  styleUrls: [ './home.less' ]
+  styleUrls: [ './home.scss' ]
 })
 
 export class HomeViewComponent {

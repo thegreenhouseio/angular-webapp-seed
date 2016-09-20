@@ -1,19 +1,15 @@
-<div>
+<div class="container">
 
-  <div class="col-md-12">
+  <section class="row">
+    <seed-header></seed-header>
+  </section>
 
-    <section class="row">
-      <seed-header></seed-header>
-    </section>
+  <section class="row">
+    <router-outlet></router-outlet>
+  </section>
 
-    <section class="row">
-      <router-outlet></router-outlet>
-    </section>
-
-    <section class="row">
-      <seed-footer></seed-footer>
-    </section>
-
-  </div>
+  <section class="row">
+    <seed-footer></seed-footer>
+  </section>
 
 </div>
