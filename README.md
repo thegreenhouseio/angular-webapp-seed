@@ -25,7 +25,7 @@ As this is primarily a JavaScript based repo, a principal motivation in the dire
 ## Tooling
 The following tools are used in the application
 
-- [Angular 2][] (rc6) - as the Front-End framework
+- [Angular 2][] - as the Front-End framework
 - [Webpack 1.13][] - Module loader / bundler, primary build tool
 - [Node 4.4.x][]  - local development and build time JavaScript runtime
 - [NPM 3.8.x][]  - package manager for build and application dependencies
