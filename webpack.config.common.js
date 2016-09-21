@@ -30,8 +30,8 @@ module.exports = {
       exclude: [/\.(spec|e2e)\.ts$/]
     },
     {
-      test: /\.less/,
-      loader: "to-string!css!less"
+      test: /\.scss/,
+      loader: "to-string!css!sass"
     },
     {
       test: /\.html$/,
@@ -63,10 +63,6 @@ module.exports = {
     }, {  //TODO add using import?
       from: './node_modules/font-awesome/css/font-awesome.css',
       to: './assets/vendor/font-awesome.css'
-    }, {  //TODO add using import?
-      context: './node_modules/bootstrap/dist/fonts/',
-      from: '*',
-      to: './assets/fonts/'  //bootstrap hardcoded path to fonts one directory up from the CSS... >:
     }, {  //TODO add using import?
       context: './node_modules/font-awesome/fonts/',
       from: '*',

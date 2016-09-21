@@ -4,7 +4,7 @@ import { PostInterface, PostsService  } from '../../services/posts.service';
 @Component({
   selector: 'seed-posts-list',
   templateUrl: './posts-list.html',
-  styleUrls: [ './posts-list.less' ]
+  styleUrls: [ './posts-list.scss' ]
 })
 
 export class PostsListComponent implements OnInit {

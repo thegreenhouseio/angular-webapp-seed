@@ -5,7 +5,7 @@ import { PostInterface, PostsService } from '../../services/posts.service';
 @Component({
   selector: 'post-detailed',
   templateUrl: './post-details.html',
-  styleUrls: [ './posts.less' ]
+  styleUrls: [ './posts.scss' ]
 })
 
 export class PostDetailsViewComponent extends OnInit {

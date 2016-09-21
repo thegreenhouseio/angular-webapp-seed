@@ -1,9 +1,11 @@
+@import "../bootstrap/bootstrap";
+
 .seed-footer {
 
   .copyright-text {
     margin: 10px auto;
     text-align: center;
-    color: #020202;
+    color: $white;
   }
 
 }
