@@ -27,23 +27,21 @@ The following tools are used in the application
 
 - [Angular 2][] - as the Front-End framework
 - [Webpack 1.13][] - Module loader / bundler, primary build tool
-- [Node 4.4.x][]  - local development and build time JavaScript runtime
-- [NPM 3.8.x][]  - package manager for build and application dependencies
-- [TypeScript 1.8][] - superset of JavaScript for writing application code
+- [Node 6][]  - local development and build time JavaScript runtime
+- [NPM 3][]  - package manager for build and application dependencies
+- [TypeScript 2.0][] - superset of JavaScript for writing application code
 - [Karma 1.2][] - task runner for unit testing
 - [Jasmine][] - testing framework
-- [LESS][] - CSS preprocessor
-- [Bootstrap 3.x][] - Mobile first CSS framework
+- [Bootstrap 4][] (alpha) - Mobile first CSS framework
 
-[Node 4.4.x]: https://nodejs.org/
-[NPM 3.8.x]: https://www.npmjs.com/
+[Node 6]: https://nodejs.org/
+[NPM 3]: https://www.npmjs.com/
 [Angular 2]: https://angular.io/
-[TypeScript 1.8]: https://www.typescriptlang.org/
+[TypeScript 2.0]: https://www.typescriptlang.org/
 [Webpack 1.13]: https://webpack.github.io/
 [Karma 1.2]: https://karma-runner.github.io/1.0/index.html
 [Jasmine]: http://jasmine.github.io/
-[LESS]: http://lesscss.org/
-[Bootstrap 3.x]: http://getbootstrap.com/
+[Bootstrap 4]: http://v4-alpha.getbootstrap.com/
 
 ## Links
 * Repository (Github)- TODO <link-here>
