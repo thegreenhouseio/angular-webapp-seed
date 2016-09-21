@@ -25,7 +25,7 @@
   "scripts": {
     "build": "rimraf ./build && webpack --config ./webpack.config.prod.js -p --progress --profile --bail",
     "ci": "export NODE_ENV=production && npm run test:unit && npm run build",
-    "develop": "export NODE_ENV=development && rimraf ./build && webpack-dev-server --config ./webpack.config.dev.js --hot --inline --progress --port 6789",
+    "develop": "export NODE_ENV=development && rimraf ./build && webpack-dev-server --config ./webpack.config.dev.js --inline --progress --port 6789",
     "demo": "npm run build && ./node_modules/.bin/gulp serve",
     "install:typings": "./node_modules/.bin/typings install",
     "test:unit": "rimraf ./reports && karma start ./karma.conf.js"
