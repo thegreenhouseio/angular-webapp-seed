@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -48,6 +49,28 @@ module.exports = {
   plugins: [
     new ForkCheckerPlugin(),
 
+    new FaviconsWebpackPlugin({
+      logo: './src/components/bootstrap/images/favicon.png',
+      emitStats: true,
+      prefix: 'icons/',
+      statsFilename: 'icons/stats.json',
+      inject: true,
+      title: 'The Greenhouse',
+      background: '#efefef',
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: false,
+        favicons: true,
+        firefox: true,
+        opengraph: true,
+        twitter: true,
+        yandex: true,
+        windows: true
+      }
+    }),
+
     new webpack.optimize.OccurenceOrderPlugin(true),
 
     new webpack.optimize.CommonsChunkPlugin({
@@ -55,9 +78,7 @@ module.exports = {
     }),
 
     new CopyWebpackPlugin([{
-      from: './src/components/bootstrap/images/favicon.png',
-      to: './assets/images/favicon.png'
-    }, {  //TODO add using import?
+      //TODO add using import?
       from: './node_modules/bootstrap/dist/css/bootstrap.min.css',
       to: './assets/vendor/bootstrap.min.css'
     }, {  //TODO add using import?
