@@ -8,3 +8,6 @@ import '@angular/router';
 
 // RxJS
 import 'rxjs';
+
+//font-awesome
+require("font-awesome-webpack");

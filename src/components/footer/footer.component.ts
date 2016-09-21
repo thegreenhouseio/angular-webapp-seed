@@ -14,11 +14,7 @@ export class FooterComponent {
     this.currentYear = new Date().getFullYear();
   }
 
-  getStartingYear(): number {
-    return this.startingYear;
-  }
-
-  getCurrentYear(): number {
-    return this.currentYear;
+  getCopyright() : string {
+    return this.startingYear + ' - ' +  this.currentYear;
   }
 }

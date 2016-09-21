@@ -3,7 +3,7 @@ import { PostInterface, PostsService } from './posts.service';
 
 describe('First Test Suite', () => {
 
-  it('should test PostService', () => {
+  it('should test PostInterface', () => {
     let post: PostInterface = {
       id: 1,
       title: 'Post 1 Title',

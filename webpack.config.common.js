@@ -1,8 +1,8 @@
 //TODO get rid of helpers?
 const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -41,6 +41,10 @@ module.exports = {
     {
       test: /\.(jpg|png|gif)$/,
       loader: 'file'
+    }, {
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff"
+    }, {
+      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader"
     }]
   },
 
@@ -48,26 +52,33 @@ module.exports = {
   plugins: [
     new ForkCheckerPlugin(),
 
+    new FaviconsWebpackPlugin({
+      logo: './src/components/bootstrap/images/favicon.png',
+      emitStats: true,
+      prefix: 'icons/',
+      statsFilename: 'icons/stats.json',
+      inject: true,
+      title: 'The Greenhouse',
+      background: '#efefef',
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: false,
+        favicons: true,
+        firefox: true,
+        opengraph: true,
+        twitter: true,
+        yandex: true,
+        windows: true
+      }
+    }),
+
     new webpack.optimize.OccurenceOrderPlugin(true),
 
     new webpack.optimize.CommonsChunkPlugin({
       name: ['polyfills', 'vendor'].reverse()
     }),
-
-    new CopyWebpackPlugin([{
-      from: './src/components/bootstrap/images/favicon.png',
-      to: './assets/images/favicon.png'
-    }, {  //TODO add using import?
-      from: './node_modules/bootstrap/dist/css/bootstrap.min.css',
-      to: './assets/vendor/bootstrap.min.css'
-    }, {  //TODO add using import?
-      from: './node_modules/font-awesome/css/font-awesome.css',
-      to: './assets/vendor/font-awesome.css'
-    }, {  //TODO add using import?
-      context: './node_modules/font-awesome/fonts/',
-      from: '*',
-      to: './assets/fonts/'  //bootstrap hardcoded path to fonts one directory up from the CSS... >:
-    }]),
 
     new HtmlWebpackPlugin({
       template: 'src/index.html',
