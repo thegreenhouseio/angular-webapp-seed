@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class FooterComponent {
-  private STARTING_YEAR: number = 2014;
+  private readonly startingYear: number = 2014;
   private currentYear: number;
 
   constructor(){
@@ -15,7 +15,7 @@ export class FooterComponent {
   }
 
   getStartingYear(): number {
-    return this.STARTING_YEAR;
+    return this.startingYear;
   }
 
   getCurrentYear(): number {

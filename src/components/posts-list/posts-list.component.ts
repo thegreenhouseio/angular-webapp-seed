@@ -8,9 +8,7 @@ import { PostInterface, PostsService  } from '../../services/posts.service';
 })
 
 export class PostsListComponent implements OnInit {
-  //TODO make constant - https://thegreenhouse.atlassian.net/browse/AS-246
-  //TODO make configurable?
-  private MAX_POSTS: number = 2;
+  private readonly maxPosts: number = 2;
   private posts: Array<PostInterface> = [];
 
   constructor(private PostsService: PostsService){
@@ -21,6 +19,6 @@ export class PostsListComponent implements OnInit {
   }
 
   getMaxPosts(): number {
-    return this.MAX_POSTS;
+    return this.maxPosts;
   }
 }
