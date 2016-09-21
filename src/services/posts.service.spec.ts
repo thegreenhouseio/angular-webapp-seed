@@ -1,7 +1,7 @@
 import { Http } from '@angular/http';
 import { PostInterface, PostsService } from './posts.service';
 
-describe('First Test Suite', () => {
+xdescribe('First Test Suite', () => {
 
   it('should test PostService', () => {
     let post: PostInterface = {
