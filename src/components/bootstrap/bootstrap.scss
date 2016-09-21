@@ -1,4 +1,5 @@
 @import '../../../node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina');
 
 //variables
 $white: #efefef;
@@ -13,26 +14,8 @@ $font-family-primary: 'Oxygen', cursive;
 $font-color-primary: $white;
 $font-color-secondary: #316291;
 
-
 .app {
 
-  a {
-    color: $white;
-  }
+  font-family: 'Baloo Bhaina', cursive;
 
-  .page-container {
-    margin: 0 auto;
-    min-height: 500px;
-    background-color: $bg-primary;
-  }
-
-  .link {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-
-  .router-outlet {
-    margin-top: 20px;
-    display: block;
-  }
 }
