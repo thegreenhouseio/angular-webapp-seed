@@ -3,7 +3,7 @@ import { PostInterface, PostsService } from './posts.service';
 
 describe('First Test Suite', () => {
 
-  it('should test PostService', () => {
+  it('should test PostInterface', () => {
     let post: PostInterface = {
       id: 1,
       title: 'Post 1 Title',
@@ -18,7 +18,7 @@ describe('First Test Suite', () => {
     expect(PostsService).toBeDefined();
   });
 
-  xit('should test PostService get', () => {
+  it('should test PostService get', () => {
     let posts: Array<PostInterface> = new PostsService(Http).getPosts(null);
 
     expect(PostsService).toBeDefined();
