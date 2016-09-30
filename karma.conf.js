@@ -10,7 +10,7 @@ webpackConfig.module.loaders[0].exclude = [];
 
 // TODO issues with karma and CommonChunksPlugin
 // https://github.com/webpack/karma-webpack/issues/24
-webpackConfig.plugins[2] = function() {};
+webpackConfig.plugins[3] = function() {};
 
 
 module.exports = function(config) {

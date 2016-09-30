@@ -1,15 +1,23 @@
-.seed-header{
-  margin-bottom: 20px;
+@import "../../components/bootstrap/bootstrap";
 
-  img, .header-mobile-text {
-    display: block;
-    width: 645px;
+:host {
+  margin-bottom: 20px;
+  text-align: center;
+  cursor: pointer;
+
+  .header-text {
     margin: 0 auto;
   }
 
-  p {
+  .header-banner {
+    background: url("./images/banner.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 250px;
+  }
+
+  .header-text-mobile {
     width: 50px;
     margin: 0 auto;
-    text-align: center;
   }
 }

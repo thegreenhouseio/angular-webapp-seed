@@ -10,12 +10,12 @@ $bg-primary: #c2b08b;
 $bg-secondary: #ae996b;
 $bg-tertiary: #d3c6ae;
 
-$font-family-primary: 'Oxygen', cursive;
+$font-family-primary: 'Baloo Bhaina', cursive;
 $font-color-primary: $white;
 $font-color-secondary: #316291;
 
-.app {
+:host {
 
-  font-family: 'Baloo Bhaina', cursive;
+  font-family: $font-family-primary;
 
 }

@@ -1,11 +1,7 @@
-<header class="col-xs-12 seed-header">
+<header [routerLink]="['home']" class="col-xs-12 seed-header">
 
-  <a [routerLink]="['home']">
-
-    <p class="visible-xs-inline-block header-mobile-text">The Greenhouse</p>
-    <img class="hidden-xs" src="./images/banner.gif" alt="The Greenhouse banner"/>
-    <p>.io</p>
-
-  </a>
+    <h2 class="header-text">The Greenhouse</h2>
+    <div class="hidden-sm-down header-banner"></div>
+    <p class="header-text-mobile">.io</p>
 
 </header>

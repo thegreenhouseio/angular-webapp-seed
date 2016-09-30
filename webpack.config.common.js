@@ -31,7 +31,7 @@ module.exports = {
     },
     {
       test: /\.scss/,
-      loader: "to-string!css!sass"
+      loader: "css-to-string!css!sass"
     },
     {
       test: /\.html$/,
@@ -42,16 +42,16 @@ module.exports = {
       test: /\.(jpg|png|gif)$/,
       loader: 'file'
     }, {
-      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff"
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: "url-loader?limit=10000&mimetype=application/font-woff"
     }, {
-      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader"
+      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: "file-loader"
     }]
   },
 
 
   plugins: [
-    new ForkCheckerPlugin(),
-
     new FaviconsWebpackPlugin({
       logo: './src/components/bootstrap/images/favicon.png',
       emitStats: true,
@@ -74,17 +74,18 @@ module.exports = {
       }
     }),
 
-    new webpack.optimize.OccurenceOrderPlugin(true),
-
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['polyfills', 'vendor'].reverse()
-    }),
+    new ForkCheckerPlugin(),
 
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       chunksSortMode: 'dependency'
     }),
 
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['polyfills', 'vendor'].reverse()
+    }),
+
+    new webpack.optimize.OccurenceOrderPlugin(true)
   ],
 
   //TODO is this needed?
