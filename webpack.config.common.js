@@ -11,15 +11,15 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.ts', '.js', '.json'],
-    root: __dirname + './src',
-    modulesDirectories: ['node_modules'],
+    extensions: ['.ts', '.js', '.json'],
+    modules: [
+      __dirname + '/src',
+      "node_modules"
+    ]
   },
 
   module: {
-    preLoaders: [],
-
-    loaders: [{
+    rules: [{
       test: /\.ts$/,
       loaders: [
         'awesome-typescript-loader',
@@ -50,6 +50,17 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.LoaderOptionsPlugin({
+      test: /\.ts$/, // may apply this only for some modules
+      options: {
+        tslint: { //prod linting by default
+          emitErrors: true,
+          failOnHint: true,
+          resourcePath: 'src'
+        }
+      }
+    }),
+
     new FaviconsWebpackPlugin({
       logo: './src/components/bootstrap/images/favicon.png',
       emitStats: true,
@@ -81,9 +92,7 @@ module.exports = {
 
     new webpack.optimize.CommonsChunkPlugin({
       name: ['polyfills', 'vendor'].reverse()
-    }),
-
-    new webpack.optimize.OccurenceOrderPlugin(true)
+    })
   ],
 
   //TODO is this needed?
