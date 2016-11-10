@@ -19,9 +19,6 @@ const METADATA = webpackMerge(commonConfig.metadata, {
 });
 
 module.exports = webpackMerge(commonConfig, {
-
-  debug: false,
-
   devtool: 'source-map',
 
   output: {
@@ -59,12 +56,6 @@ module.exports = webpackMerge(commonConfig, {
     //   __dirname + 'config/modules/angular2-hmr-prod.js')
     // ),
   ],
-
-  tslint: {
-    emitErrors: true,
-    failOnHint: true,
-    resourcePath: 'src'
-  },
 
   // TODO: Need to workaround Angular 2's html syntax => #id [bind] (event) *ngFor
   htmlLoader: {

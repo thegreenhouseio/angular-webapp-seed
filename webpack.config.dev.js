@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.config.common.js');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
@@ -14,8 +15,6 @@ const METADATA = webpackMerge(commonConfig.metadata, {
 });
 
 module.exports = webpackMerge(commonConfig, {
-  metadata: METADATA,
-  debug: true,
   devtool: 'cheap-module-source-map',
 
   output: {
@@ -38,13 +37,18 @@ module.exports = webpackMerge(commonConfig, {
         'HMR': METADATA.HMR,
       }
     }),
-  ],
 
-  tslint: {
-    emitErrors: false,
-    failOnHint: false,
-    resourcePath: 'src'
-  },
+    new webpack.LoaderOptionsPlugin({
+      test: /\.ts$/, // may apply this only for some modules
+      options: {
+        tslint: { //prod linting by default
+          emitErrors: false,
+          failOnHint: false,
+          resourcePath: 'src'
+        }
+      },
+    })
+  ],
 
   devServer: {
     port: METADATA.port,
@@ -66,7 +70,7 @@ module.exports = webpackMerge(commonConfig, {
 
   //TODO is this needed?
   node: {
-    global: 'window',
+    global: true,
     crypto: 'empty',
     process: true,
     module: false,
