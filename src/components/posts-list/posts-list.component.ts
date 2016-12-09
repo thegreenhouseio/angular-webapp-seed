@@ -15,7 +15,7 @@ export class PostsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.posts = this.PostsService.getPosts(null);
+    this.posts = this.PostsService.getPosts();
   }
 
   getMaxPosts(): number {

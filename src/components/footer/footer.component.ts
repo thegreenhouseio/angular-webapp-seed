@@ -14,7 +14,7 @@ export class FooterComponent {
     this.currentYear = new Date().getFullYear();
   }
 
-  getCopyright() : string {
+  public getCopyright() : string {
     return this.startingYear + ' - ' +  this.currentYear;
   }
 }
