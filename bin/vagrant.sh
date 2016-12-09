@@ -20,16 +20,9 @@ echo "node -v"
 node -v
 echo "npm -v"
 npm -v
-echo "bower -v"
-./node_modules/.bin/bower -v
-echo "gulp -v"
-./node_modules/.bin/gulp -v
 
 echo -e "*** Installing Project Dependencies ***"
 cd /vagrant
 
 rm -rf node_modules > /dev/null 2>&1
-rm -rf typings > /dev/null 2>&1
-
 npm install
-npm run install:typings

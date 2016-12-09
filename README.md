@@ -25,23 +25,23 @@ As this is primarily a JavaScript based repo, a principal motivation in the dire
 ## Tooling
 The following tools are used in the application
 
-- [Angular 2][] - as the Front-End framework
-- [Webpack 1.13][] - Module loader / bundler, primary build tool
-- [Node 6][]  - local development and build time JavaScript runtime
-- [NPM 3][]  - package manager for build and application dependencies
-- [TypeScript 2.0][] - superset of JavaScript for writing application code
-- [Karma 1.2][] - task runner for unit testing
+- [Angular][] 2 - as the Front-End framework
+- [Webpack][] 1 - Module loader / bundler, primary build tool
+- [Node][] 6  - local development and build time JavaScript runtime
+- [NPM][] 3 - package manager for build and application dependencies
+- [TypeScript][] 2.0 - superset of JavaScript for writing application code
+- [Karma][] - task runner for unit testing
 - [Jasmine][] - testing framework
-- [Bootstrap 4][] (alpha) - Mobile first CSS framework
+- [Bootstrap][] 4 (alpha) - Mobile first CSS framework
 
-[Node 6]: https://nodejs.org/
-[NPM 3]: https://www.npmjs.com/
-[Angular 2]: https://angular.io/
-[TypeScript 2.0]: https://www.typescriptlang.org/
-[Webpack 1.13]: https://webpack.github.io/
-[Karma 1.2]: https://karma-runner.github.io/1.0/index.html
+[Node]: https://nodejs.org/
+[NPM]: https://www.npmjs.com/
+[Angular]: https://angular.io/
+[TypeScript]: https://www.typescriptlang.org/
+[Webpack]: https://webpack.github.io/
+[Karma]: https://karma-runner.github.io/1.0/index.html
 [Jasmine]: http://jasmine.github.io/
-[Bootstrap 4]: http://v4-alpha.getbootstrap.com/
+[Bootstrap]: http://v4-alpha.getbootstrap.com/
 
 ## Links
 * Repository (Github)- TODO <link-here>
@@ -213,18 +213,11 @@ $ npm install <some-package> --save
 ```
 
 #### TypeScript Typings
-Typescript definitation are either managed by the Typings binary into _typings.json_.  Install new typings using 
+Typescript definitions provide type information for third-party packages and can be installed with NPM
 
-```
-$ ./node_modules/.bin/typings <typing-name> --save
-```
+`$ npm install @type/{name} --save-dev`
 
-example installing globally and form definitely typed (not NPM)
-
-```
-./node_modules/.bin/typings install dt~karma-jasmine --save --global
-```
-
+Then add that name to the `compilerOptions.types` array in _tsconfig.json_
 
 ## Continuous Integration
 **//TODO Document Continuous Integration Environment Here**

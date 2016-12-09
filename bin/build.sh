@@ -2,8 +2,6 @@
 
 echo "executing build.sh..."
 
-echo "show environment..."
-
 echo "node version"
 node --version
 
@@ -25,12 +23,6 @@ echo "gulp version"
 
 echo "typescript version"
 ./node_modules/.bin/tsc --version
-
-echo "typings version"
-./node_modules/.bin/typings --version
-
-echo "install typings"
-npm run install:typings
 
 echo "running the build..."
 npm run ci

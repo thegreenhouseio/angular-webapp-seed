@@ -8,7 +8,12 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false,
-    "outDir": "./build"
+    "outDir": "./build",
+    "types": [
+      "core-js",
+      "jasmine",
+      "node"
+    ]
   },
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,
