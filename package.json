@@ -26,10 +26,10 @@
   },
   "scripts": {
     "build": "rimraf ./build && webpack --config ./webpack.config.prod.js -p --progress --profile --bail",
-    "ci": "export NODE_ENV=production && npm run test:unit && npm run build",
+    "ci": "export NODE_ENV=production && npm run test && npm run build",
     "develop": "export NODE_ENV=development && rimraf ./build && webpack-dev-server --config ./webpack.config.dev.js --inline --progress --port 6789",
     "demo": "npm run build && ./node_modules/.bin/gulp serve",
-    "test:unit": "rimraf ./reports && karma start ./karma.conf.js"
+    "test": "rimraf ./reports && karma start ./karma.conf.js"
   },
   "private": true,
   "readmeFilename": "README.md",
