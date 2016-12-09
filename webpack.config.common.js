@@ -1,14 +1,13 @@
-//TODO get rid of helpers?
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   entry: {
     'polyfills': './src/polyfills.ts',
-    'vendor':    './src/vendor.ts',
-    'main':      './src/main.ts'
+    'vendor': './src/vendor.ts',
+    'main': './src/main.ts'
   },
 
   resolve: {
@@ -49,7 +48,6 @@ module.exports = {
       loader: "file-loader"
     }]
   },
-
 
   plugins: [
     new FaviconsWebpackPlugin({
