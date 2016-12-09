@@ -21,10 +21,10 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
     files: [
       //PhantomJS is missing these files
-      {pattern: 'node_modules/reflect-metadata/Reflect.js'},
+      {pattern: 'node_modules/reflect-metadata/Reflect.js', watched: false},
       //PhantomJS is missing these files - https://github.com/wallabyjs/public/issues/542
-      {pattern: 'node_modules/babel-polyfill/browser.js'},
-      {pattern: 'src/**/*.spec.ts'}
+      {pattern: 'node_modules/babel-polyfill/browser.js', watched: false},
+      {pattern: 'src/**/*.spec.ts', watched: false}
     ],
 
     preprocessors: {
