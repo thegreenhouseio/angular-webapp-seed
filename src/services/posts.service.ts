@@ -1,6 +1,4 @@
-import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { Observable } from "rxjs/Rx";
 
 export interface PostInterface {
   id?: number,
@@ -28,15 +26,22 @@ export class PostsService {
     createdTime: 1471959311
   }];
 
-  constructor(private http: Http) {
+  constructor() {
   }
 
-  public getPosts(postId: number): Array<PostInterface> {
+  public getPosts(postId?: number): Array<PostInterface> {
+
     if(postId){
+      let found = false;
+
       for(let i = 0, l = this.posts.length; i < l; i++){
         if(this.posts[i].id === postId){
           return [this.posts[i]];
         }
+      }
+
+      if(!found){
+        return [];
       }
     }
 
