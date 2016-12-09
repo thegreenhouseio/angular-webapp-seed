@@ -14,15 +14,14 @@ describe('Footer Component Test Suite', () => {
   });
 
   beforeEach(async(() => {
-    TestBed
-      .configureTestingModule({
-        declarations: [ FooterComponent ], // declare the test component
+    TestBed.configureTestingModule({
+      declarations: [ FooterComponent ]
     })
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FooterComponent);
-    component = fixture.componentInstance; // FooterComponent test instance
+    component = fixture.componentInstance;
 
     debugElement = fixture.debugElement.query(By.css('footer'));
     nativeElement = debugElement.nativeElement;
