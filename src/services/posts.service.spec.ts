@@ -2,7 +2,7 @@ import { PostInterface, PostsService } from './posts.service';
 
 describe('Posts Service Test Suite', () => {
 
-  it('should exercise PostInterface', () => {
+  it('should test PostInterface', () => {
     let post: PostInterface = {
       id: 1,
       title: 'Post 1 Title',
@@ -16,17 +16,17 @@ describe('Posts Service Test Suite', () => {
     expect(post.createdTime).toEqual(1472091258);
   });
 
-  it('should test PostService to be defined', () => {
+  it('should test PostService is defined', () => {
     expect(PostsService).toBeDefined();
   });
 
-  it('should test PostService.getPosts all', () => {
+  it('should test PostService.getPosts with no id returns all posts', () => {
     let posts: Array<PostInterface> = new PostsService().getPosts();
 
     expect(posts.length).toEqual(3);
   });
 
-  it('should test PostService.getPosts by an id that exists', () => {
+  it('should test PostService.getPosts with an id that exists returns a match', () => {
     let posts: Array<PostInterface> = new PostsService().getPosts(2);
 
     expect(posts.length).toEqual(1);
@@ -36,7 +36,7 @@ describe('Posts Service Test Suite', () => {
     expect(posts[0].createdTime).toEqual(1471989627);
   });
 
-  it('should test PostService.getPosts by id that doesn not exist', () => {
+  it('should test PostService.getPosts with an id that does not exist returns no matches', () => {
     let posts: Array<PostInterface> = new PostsService().getPosts(5);
 
     expect(posts.length).toEqual(0);
