@@ -9,7 +9,7 @@ describe('Footer Component Test Suite', () => {
   let debugElement;
   let nativeElement;
 
-  beforeAll( ()=> {
+  beforeAll(() => {
     TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
   });
 
@@ -39,11 +39,9 @@ describe('Footer Component Test Suite', () => {
     expect(nativeElement.querySelector('p a') !== null).toBe(true);
   });
 
-  it('should test that the component has the correct copyright text before / after intialization', () => {
+  it('should test that the component has the correct copyright text after intialization', () => {
     let currentYear = new Date().getFullYear();
     let copyrightTextElement = nativeElement.querySelector('p');
-
-    expect(copyrightTextElement.textContent).toContain('The Greenhouse');
 
     fixture.detectChanges();
 
