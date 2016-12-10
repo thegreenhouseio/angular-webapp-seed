@@ -8,8 +8,8 @@ import { PostInterface, PostsService  } from '../../services/posts.service';
 })
 
 export class PostsListComponent implements OnInit {
-  private readonly maxPosts: number = 2;
   private posts: Array<PostInterface> = [];
+  public readonly maxPosts: number = 2;
 
   constructor(private PostsService: PostsService){
   }
@@ -18,7 +18,7 @@ export class PostsListComponent implements OnInit {
     this.posts = this.PostsService.getPosts();
   }
 
-  getMaxPosts(): number {
-    return this.maxPosts;
+  public getPosts(): Array<PostInterface> {
+    return this.posts;
   }
 }

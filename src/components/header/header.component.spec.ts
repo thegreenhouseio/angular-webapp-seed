@@ -2,19 +2,18 @@ import { async, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 import { HeaderComponent } from './header.component';
-import { Routes } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Routes } from '@angular/router';
 
+class MockComponent {}
 
+const MOCK_ROUTES: Routes = [{
+  path: 'home',
+  component: MockComponent
+}];
 
+//TODO test image banner?
 describe('Header Component Test Suite', () => {
-  class MockComponent {}
-
-  const MOCK_ROUTES: Routes = [{
-    path: 'home',
-    component: MockComponent
-  }];
-
   let fixture;
   let component;
   let debugElement;
