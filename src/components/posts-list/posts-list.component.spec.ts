@@ -79,20 +79,22 @@ describe('Posts List Component Test Suite', () => {
 
   it('should test that 2 posts are rendered in the component', () => {
     //TODO spy on postsService
+    //spyOn(postsService, 'getPosts');
     fixture.detectChanges();
 
-    let postHeaders = nativeElement.querySelectorAll('div.post');
-    let postTimes = nativeElement.querySelectorAll('h4.post-header');
+    let postHeaders = nativeElement.querySelectorAll('h4.post-header');
+    let postTimes = nativeElement.querySelectorAll('span.post-time');
     let postSummaries = nativeElement.querySelectorAll('details.post-summary');
     let postLinks = nativeElement.querySelectorAll('a.post-link');
 
-    expect(nativeElement.querySelectorAll('div.post').length).toEqual(2);
-    expect(postHeaders.length).toEqual(2);
-    expect(postTimes.length).toEqual(2);
-    expect(postSummaries.length).toEqual(2);
-    expect(postLinks.length).toEqual(2);
+    expect(nativeElement.querySelectorAll('h2').length).toBe(1);
+    expect(nativeElement.querySelectorAll('div.post').length).toBe(2);
+    expect(postHeaders.length).toBe(2);
+    expect(postTimes.length).toBe(2);
+    expect(postSummaries.length).toBe(2);
+    expect(postLinks.length).toBe(2);
 
-    //expect(postHeaders[0].textContent).toBe('Post 1 Title');
+    expect(nativeElement.querySelector('h2').textContent).toBe('Latest Posts');
   });
 
 });
