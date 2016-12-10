@@ -4,14 +4,14 @@
 
   <div *ngFor="let post of getPosts(); let idx = index">
 
-    <div *ngIf="idx < getMaxPosts()" class="post">
+    <div *ngIf="idx < MAX_POSTS" class="post">
       <h4 class="post-header">{{post.title}}
         <span class="post-time">{{ (post.createdTime * 1000) | date : 'EEEE, MMMM d, yyyy, h:mm a' }}</span>
       </h4>
 
       <details [innerHTML]="post.summary" class="post-summary"></details>
 
-      <a [routerLink]="['/posts/' + post.id]">Click for full details</a>
+      <a class="post-link" [routerLink]="['/posts/' + post.id]">Click for full details</a>
 
       <hr/>
     </div>
