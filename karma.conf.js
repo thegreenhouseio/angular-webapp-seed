@@ -31,6 +31,7 @@ module.exports = function(config) {
       {pattern: 'node_modules/zone.js/dist/async-test.js', watched: false},
       {pattern: 'node_modules/zone.js/dist/fake-async-test.js', watched: false},
       {pattern: 'node_modules/intl/dist/Intl.js', watched: false},
+      {pattern: 'node_modules/intl/locale-data/jsonp/en.js', watched: false},
       {pattern: 'src/**/*.spec.ts', watched: false}
     ],
 
