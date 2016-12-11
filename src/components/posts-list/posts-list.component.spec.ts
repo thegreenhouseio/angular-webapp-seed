@@ -82,20 +82,33 @@ describe('Posts List Component Test Suite', () => {
     //spyOn(postsService, 'getPosts');
     fixture.detectChanges();
 
+    let componentTitle = nativeElement.querySelectorAll('h2');
+    let postContainer = nativeElement.querySelectorAll('div.post');
     let postHeaders = nativeElement.querySelectorAll('h4.post-header');
     let postTimes = nativeElement.querySelectorAll('span.post-time');
     let postSummaries = nativeElement.querySelectorAll('details.post-summary');
     let postLinks = nativeElement.querySelectorAll('a.post-link');
 
-    expect(nativeElement.querySelectorAll('h2').length).toBe(1);
-    expect(nativeElement.querySelectorAll('div.post').length).toBe(2);
+    expect(componentTitle.length).toBe(1);
+    expect(postContainer.length).toBe(2);
     expect(postHeaders.length).toBe(2);
     expect(postTimes.length).toBe(2);
     expect(postSummaries.length).toBe(2);
     expect(postLinks.length).toBe(2);
 
-    expect(nativeElement.querySelector('h2').textContent).toBe('Latest Posts');
+    expect(componentTitle[0].textContent).toBe('Latest Posts');
+
+    expect(postHeaders[0].textContent).toContain('Post 1 Title');
+    expect(postTimes[0].textContent).toBe('Wednesday, August 24, 2016, 10:14 PM');
+    expect(postSummaries[0].textContent).toBe('Analog is playing at The Tankard this Saturday, with opening act Sean Daley.  Please come join as we prevew some of the new songs on the album.');
+    expect(postLinks[0].href).toContain('/post/1');  //TODO account for host and use toBe?
+    expect(postLinks[0].textContent).toBe('Click for full details');
+
+    expect(postHeaders[1].textContent).toContain('Post 2 Title');
+    expect(postTimes[1].textContent).toBe('Tuesday, August 23, 2016, 6:00 PM');
+    expect(postSummaries[1].textContent).toBe('Post 2 Summary');
+    expect(postLinks[1].href).toContain('/post/2');  //TODO account for host and use toBe?
+    expect(postLinks[1].textContent).toBe('Click for full details');
   });
 
 });
-
