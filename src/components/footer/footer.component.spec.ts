@@ -35,8 +35,8 @@ describe('Footer Component Test Suite', () => {
   });
 
   it('should test that the component has the expected template element(s)', () => {
-    expect(nativeElement.querySelector('p') !== null).toBe(true);
-    expect(nativeElement.querySelector('p a') !== null).toBe(true);
+    expect(nativeElement.querySelectorAll('p').length).toBe(1);
+    expect(nativeElement.querySelectorAll('p a').length).toBe(1);
   });
 
   it('should test that the component has the correct copyright text after intialization', () => {
