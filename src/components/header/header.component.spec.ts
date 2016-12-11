@@ -39,19 +39,19 @@ describe('Header Component Test Suite', () => {
   });
 
   it('should test that the component has the expected template elements', () => {
-    expect(nativeElement.querySelectorAll('h2.header-text').length).toBe(1);
-    expect(nativeElement.querySelectorAll('div.header-banner').length).toBe(1);
-    expect(nativeElement.querySelectorAll('p.header-text-mobile').length).toBe(1);
+    expect(nativeElement.querySelectorAll('h2.hidden-md-up.header-text').length).toBe(1);
+    expect(nativeElement.querySelectorAll('div.hidden-sm-down.header-banner').length).toBe(1);
+    expect(nativeElement.querySelectorAll('p.io-text').length).toBe(1);
   });
 
-  it('should test that the header text has the expected content', () => {
+  it('should test that the header text element has the expected content', () => {
     let headerTextElement = nativeElement.querySelector('h2.header-text');
 
     expect(headerTextElement.textContent).toBe('The Greenhouse');
   });
 
-  it('should test that the mobile header text has the expected content', () => {
-    let mobileHeaderTextElement = nativeElement.querySelector('p.header-text-mobile');
+  it('should test that the io text element has the expected content', () => {
+    let mobileHeaderTextElement = nativeElement.querySelector('p.io-text');
 
     expect(mobileHeaderTextElement.textContent).toBe('.io');
   });
