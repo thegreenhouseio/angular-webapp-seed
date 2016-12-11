@@ -66,6 +66,7 @@ Recommended plugins to have are:
 [Webstorm]: https://www.jetbrains.com/webstorm/
 
 ### Vagrant (optional)
+**Known Issue - https://github.com/thegreenhouseio/angular2-webpack-seed/issues/45**
 This project provides Vagrant to provision Virtual Machines for use with development.  It is very easy to use
 
 First, install the following
@@ -87,9 +88,8 @@ Steps for starting Vagrant
 
 ### Manual
 
-1) If you don't already have it, download and install NodeJS (comes with NPM).
-
-2) This project favors version 3.x or higher, so make sure you have the latest by updating it after installing Node by running
+1. If you don't already have it, download and install NodeJS (comes with NPM).
+2. This project favors version 3.x or higher, so make sure you have the latest by updating it after installing Node by running
 
 ```
 $ npm install -g npm@3.8.8
