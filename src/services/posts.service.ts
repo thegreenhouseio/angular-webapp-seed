@@ -9,7 +9,7 @@ export interface PostInterface {
 
 @Injectable()
 export class PostsService {
-  private posts: Array<PostInterface> = [{
+  private readonly posts: Array<PostInterface> = [{
     id: 1,
     title: 'Post 1 Title',
     summary: '<p>Analog is playing at <a href="https://www.facebook.com/tankedatthetank" target="">The Tankard</a> this Saturday, with opening act Sean Daley.  Please come join as we prevew some of the new songs on the album.</p>',
@@ -17,32 +17,25 @@ export class PostsService {
   }, {
     id: 2,
     title: 'Post 2 Title',
-    summary: 'Poat 2 Summary',
+    summary: 'Post 2 Summary',
     createdTime: 1471989627
   }, {
     id: 3,
     title: 'Post 3 Title',
-    summary: 'Poat 3 Summary',
+    summary: 'Post 3 Summary',
     createdTime: 1471959311
   }];
-
-  constructor() {
-  }
 
   public getPosts(postId?: number): Array<PostInterface> {
 
     if(postId){
-      let found = false;
 
-      for(let i = 0, l = this.posts.length; i < l; i++){
-        if(this.posts[i].id === postId){
-          return [this.posts[i]];
+      return this.posts.filter((post) => {
+        if(post.id === postId){
+          return post;
         }
-      }
+      });
 
-      if(!found){
-        return [];
-      }
     }
 
     return this.posts;

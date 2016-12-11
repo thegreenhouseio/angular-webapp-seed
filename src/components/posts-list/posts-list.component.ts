@@ -8,17 +8,17 @@ import { PostInterface, PostsService  } from '../../services/posts.service';
 })
 
 export class PostsListComponent implements OnInit {
-  private readonly maxPosts: number = 2;
+  public readonly MAX_POSTS: number = 2;
   private posts: Array<PostInterface> = [];
 
   constructor(private PostsService: PostsService){
   }
 
   ngOnInit(): void {
-    this.posts = this.PostsService.getPosts(null);
+    this.posts = this.PostsService.getPosts();
   }
 
-  getMaxPosts(): number {
-    return this.maxPosts;
+  public getPosts(): Array<PostInterface> {
+    return this.posts;
   }
 }

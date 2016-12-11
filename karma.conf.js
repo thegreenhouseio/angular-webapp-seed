@@ -20,10 +20,18 @@ module.exports = function(config) {
     basePath: './',
     frameworks: ['jasmine'],
     files: [
-      //PhantomJS is missing these files
+      //karma needs these files and (mostly for phantomjs) polyfills first
       {pattern: 'node_modules/reflect-metadata/Reflect.js', watched: false},
-      //PhantomJS is missing these files - https://github.com/wallabyjs/public/issues/542
       {pattern: 'node_modules/babel-polyfill/browser.js', watched: false},
+      {pattern: 'node_modules/zone.js/dist/zone.js', watched: false},
+      {pattern: 'node_modules/zone.js/dist/long-stack-trace-zone.js', watched: false},
+      {pattern: 'node_modules/zone.js/dist/proxy.js', watched: false},
+      {pattern: 'node_modules/zone.js/dist/sync-test.js', watched: false},
+      {pattern: 'node_modules/zone.js/dist/jasmine-patch.js', watched: false},
+      {pattern: 'node_modules/zone.js/dist/async-test.js', watched: false},
+      {pattern: 'node_modules/zone.js/dist/fake-async-test.js', watched: false},
+      {pattern: 'node_modules/intl/dist/Intl.js', watched: false},
+      {pattern: 'node_modules/intl/locale-data/jsonp/en.js', watched: false},
       {pattern: 'src/**/*.spec.ts', watched: false}
     ],
 
