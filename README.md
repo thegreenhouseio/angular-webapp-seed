@@ -27,7 +27,7 @@ The following tools are used in the application
 
 - [Angular][] 2 - as the Front-End framework
 - [Webpack][] 1 - Module loader / bundler, primary build tool
-- [Node][] 6  - local development and build time JavaScript runtime
+- [Node][] 8  - local development and build time JavaScript runtime
 - [NPM][] 5 - package manager for build and application dependencies
 - [TypeScript][] 2.0 - superset of JavaScript for writing application code
 - [Karma][] - task runner for unit and integration testing
