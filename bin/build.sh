@@ -5,20 +5,20 @@ echo "executing build.sh..."
 echo "node version"
 node --version
 
-echo "npm version"
-npm --version
+echo "yarn version"
+yarn --version
 
 echo "clear existing dependencies..."
 rm -rf node_modules/ > /dev/null 2>&1
 
-echo "check NPM caches..."
-npm cache verify
+# echo "check NPM caches..."
+# npm cache verify
 #npm cache clean
 
 echo "installing project dependencie"
-npm install
+yarn install
 
 echo "running the build..."
 export NODE_ENV=production
-# npm run test
-npm run build
+yarn run test
+yarn run build
