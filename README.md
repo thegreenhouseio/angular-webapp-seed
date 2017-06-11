@@ -149,6 +149,7 @@ To run unit and integration tests, run
 
 ```bash
 $ yarn run test
+<<<<<<< HEAD
 ```
 
 ### Continuous Integration / Delivery
@@ -164,6 +165,23 @@ $ npm run build
 To serve a production build locally, like for a demo run:
 
 ```bash
+=======
+```
+
+### Continuous Integration / Delivery
+For CI / CD, the production task is combined with the testing task with whatever other relevant post task is needed for that specific job's responsibility
+
+```bash
+$ export NODE_ENV=production
+$ npm run test
+$ npm run build
+```
+
+### Serve / Run
+To serve a production build locally, like for a demo run:
+
+```bash
+>>>>>>> 666108f81cd03a6ad8d03b7ef2d04fe9920c2a05
 $ npm run serve
 ```
 
