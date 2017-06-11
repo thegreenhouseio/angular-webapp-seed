@@ -26,5 +26,5 @@ echo "typescript version"
 
 echo "running the build..."
 export NODE_ENV=production
-npm run test
+# npm run test
 npm run build

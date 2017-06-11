@@ -51,6 +51,10 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['polyfills', 'vendor'].reverse()
+    }),
+
     new webpack.LoaderOptionsPlugin({
       test: /\.ts$/,
       options: {
@@ -68,10 +72,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       chunksSortMode: 'dependency'
-    }),
-
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['polyfills', 'vendor'].reverse()
     })
   ]
 };

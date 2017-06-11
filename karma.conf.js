@@ -7,11 +7,11 @@ const webpackConfig = require('./webpack.config.common');
 // *** webpack hacks *** //
 // use this to allow spec.ts to be processed by Karma.
 // TODO better way to do this?
-webpackConfig.module.loaders[0].exclude = [];
+// webpackConfig.module.loaders[0].exclude = [];
 
 // TODO issues with karma and CommonChunksPlugin
 // https://github.com/webpack/karma-webpack/issues/24
-webpackConfig.plugins[3] = function() {};
+webpackConfig.plugins[0] = function() {};
 
 module.exports = function(config) {
   const logLevel = isProductionBuild ? config.LOG_DEBUG : config.LOG_INFO;
