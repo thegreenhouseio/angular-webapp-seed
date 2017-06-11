@@ -1,10 +1,10 @@
-# angular2-webpack-seed (seed-webapp-1.0)
+# angular-webapp-seed
 Angular 2 and Webpack Seed Project for The Greenhouse, as a template / starter project for frontend web applications.
 This is a simple starter project meant to get you up and running as fast as possible with a full local and production
 build with all the tools working together and as minimal friction and configuration as possible.  Simply clone the
 repo and edit the files as needed to match your project.
 
-This was based on the excellent starter [AngularClass/angular2-webpack-starter] as well as many other resources
+This was based on the excellent starter [AngularClass/angular2-webpack-starter][] as well as many other resources
 around the internet.
 
 **Note:**
@@ -28,7 +28,7 @@ The following tools are used in the application
 - [Angular][] 2 - as the Front-End framework
 - [Webpack][] 1 - Module loader / bundler, primary build tool
 - [Node][] 6  - local development and build time JavaScript runtime
-- [NPM][] 3 - package manager for build and application dependencies
+- [NPM][] 5 - package manager for build and application dependencies
 - [TypeScript][] 2.0 - superset of JavaScript for writing application code
 - [Karma][] - task runner for unit and integration testing
 - [Jasmine][] - testing framework
@@ -65,40 +65,19 @@ Recommended plugins to have are:
 
 [Webstorm]: https://www.jetbrains.com/webstorm/
 
-### Vagrant (optional)
-**Known Issue - https://github.com/thegreenhouseio/angular2-webpack-seed/issues/45**
-This project provides Vagrant to provision Virtual Machines for use with development.  It is very easy to use
-
-First, install the following
-
-- [Vagrant][] for replicating production environments locally for development.  Version 1.7.4 required
-- [VirtualBox][] the tool used by Vagrant to spin up the local VM.  Version >= 5.x required.  Make sure to download
-guest additions as well.
-- [Vagrant Manager][] an OSX GUI tool for managing Vagrant instances (optional)
-
-Steps for starting Vagrant
-
-1. `$ vagrant up`
-2. `$ vagrant ssh`
-3. `$ cd /vagrant`
-
-[Vagrant]: http://www.vagrantup.com/
-[VirtualBox]: http://www.virtualbox.org/
-[Vagrant Manager]: http://vagrantmanager.com/
-
-### Manual
-
-1. If you don't already have it, download and install NodeJS (comes with NPM).
-2. This project favors version 3.x or higher, so make sure you have the latest by updating it after installing Node by running
-
+### Installation
+1. If you don't already have it, download and install NodeJS (which comes with NPM)
+2. Make sure you have at least version >= 5
+```bash
+$ npm install -g npm // may need sudo
+$ npm -v
+5.0.3
 ```
-$ npm install -g npm@3.8.8
-```
-
-3) Now install the build and application dependencies by running `$ npm install` (Vagrant will do this for you)
+3. Now install the project's dependencies by running `$ npm install`
 
 ## Project Layout
 An overview of important files and configurations for the applications
+
 
 ### Root Files
 Also know as "dot" files, these are the build and build configuration files for the application
@@ -131,34 +110,33 @@ a feather) organization.
 [Babel]: https://babeljs.io/
 [TS Lint]: http://palantir.github.io/tslint/
 
+
 ## Tasks
-This project uses Webpack as the build tool, exectuted via NPM scripts.  All available tasks are in the `scripts`
+This project uses Webpack as the build tool, executed via NPM scripts.  All available tasks are in the `scripts`
 section of _package.json_
 
 ### Development
 This will start up a Node (Express) server which watches for changes and "redeploys" as needed.
 
-```
+```bash
 $ npm run develop
 ```
 
 See it in a browser by opening up
 
 ```
-http://localhost:6789/
+http://localhost:1981/
 ```
 
 **Note: This task exports** `NODE_ENV=development`
 
 ### Production
-This is the production build task for the project.  It is used prior to deploying to an environment and build a
+This is the production build task for the project.  It is used prior to deploying to an environment and builds a
 production version of the application.
 
-```
+```bash
 $ npm run build
 ```
-
-**Note: This task exports** `NODE_ENV=production`
 
 ###  Testing
 Testing is an important part of software development.  There are three types of automated testing supported:
@@ -169,34 +147,24 @@ Testing is an important part of software development.  There are three types of 
 
 To run unit and integration tests, run
 
+```bash
+$ yarn run test
 ```
+
+### Continuous Integration / Delivery
+For CI / CD, the production task is combined with the testing task with whatever other relevant post task is needed for that specific job's responsibility
+
+```bash
+$ export NODE_ENV=production
 $ npm run test
+$ npm run build
 ```
 
+### Serve / Run
+To serve a production build locally, like for a demo run:
 
-To run E2E tests, run:
-```
-$ npm run e2e
-```
-
-**Note: E2E testing is not supported yet**
-
-### Continuous Integration
-This is a task for the CI server to run, generally called as part of a build script, in this case _bin/build.sh_.  Run it using
-
-```
-$ npm run ci
-```
-
-This will run (in sequence) the `build` and `test:unit` tasks.
-
-**Note: This task exports** `NODE_ENV=production`
-
-### Demo
-To serve a production build locally , like for a demo run:
-
-```
-$ npm run demo
+```bash
+$ npm run serve
 ```
 
 **Note: it is recommended you run this command from the master branch or a tag.  By Default this proxies with the
@@ -204,27 +172,18 @@ $ npm run demo
 
 
 ## Dependency Management
-There are two types of dependencies tracked in the application
+Build packages (like Webpack) are installed through Yarn into _package.json_, using
 
-### Node Modules
-Build packages (like Webpack) are installed through NPM into _package.json_, using
-
-```
-$ npm install <package-name>  --save-dev
+```bash
+$ npm install <package-name>  --dev
 ```
 
 Dependencies for the application (like Angular) are installed by running
 
+```bash
+$ npm install <package-name>
 ```
-$ npm install <some-package> --save
-```
 
-### TypeScript Type Defintions
-Typescript definitions provide type information for third-party packages and can be installed with NPM
-
-`$ npm install @type/{name} --save-dev`
-
-Then add that name to the `compilerOptions.types` array in _tsconfig.json_
 
 ## Continuous Integration
 **//TODO Document Your Continuous Integration Environment Here**
