@@ -1,15 +1,13 @@
 const commonConfig = require('./webpack.config.common');
-const DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 
 module.exports = webpackMerge(commonConfig, {
   devtool: 'source-map',
 
   plugins: [
-
-    new DedupePlugin(),
 
     new UglifyJsPlugin({
       beautify: false,

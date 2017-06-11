@@ -25,4 +25,6 @@ echo "typescript version"
 ./node_modules/.bin/tsc --version
 
 echo "running the build..."
-npm run ci
+export NODE_ENV=production
+npm run test
+npm run build
