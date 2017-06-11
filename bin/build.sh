@@ -15,14 +15,7 @@ echo "clearing NPM caches..."
 npm cache clean
 
 echo "installing project dependencie"
-echo "installing NPM packages"
 npm install
-
-echo "gulp version"
-./node_modules/.bin/gulp --version
-
-echo "typescript version"
-./node_modules/.bin/tsc --version
 
 echo "running the build..."
 export NODE_ENV=production
