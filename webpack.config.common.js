@@ -1,7 +1,7 @@
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -11,15 +11,19 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.ts', '.js', '.json'],
-    root: __dirname + './src',
-    modulesDirectories: ['node_modules'],
+    extensions: ['.ts', '.js', '.json'],
+    modules: ['./src', 'node_modules']
+  },
+
+  output: {
+    path: path.join(__dirname, 'build'),
+    filename: '[name].[chunkhash].bundle.js',
+    sourceMapFilename: '[name].[chunkhash].bundle.map',
+    chunkFilename: '[id].[chunkhash].chunk.js'
   },
 
   module: {
-    preLoaders: [],
-
-    loaders: [{
+    rules: [{
       test: /\.ts$/,
       loaders: [
         'awesome-typescript-loader',
@@ -27,73 +31,47 @@ module.exports = {
         '@angularclass/hmr-loader'
       ],
       exclude: [/\.(spec|e2e)\.ts$/]
-    },
-    {
+    }, {
       test: /\.scss/,
-      loader: "css-to-string!css!sass"
-    },
-    {
+      loader: 'css-to-string-loader!css-loader!sass-loader'
+    }, {
       test: /\.html$/,
       loader: 'html-loader',
-      exclude: [__dirname + './src/index.html']
-    },
-    {
+      exclude: ['./src/index.html']
+    }, {
       test: /\.(jpg|png|gif)$/,
-      loader: 'file'
+      loader: 'file-loader'
     }, {
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: "url-loader?limit=10000&mimetype=application/font-woff"
+      loader: 'url-loader?limit=10000&mimetype=application/font-woff'
     }, {
       test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: "file-loader"
+      loader: 'file-loader'
     }]
   },
 
   plugins: [
-    new FaviconsWebpackPlugin({
-      logo: './src/components/bootstrap/images/favicon.png',
-      emitStats: true,
-      prefix: 'icons/',
-      statsFilename: 'icons/stats.json',
-      inject: true,
-      title: 'The Greenhouse',
-      background: '#efefef',
-      icons: {
-        android: true,
-        appleIcon: true,
-        appleStartup: true,
-        coast: false,
-        favicons: true,
-        firefox: true,
-        opengraph: true,
-        twitter: true,
-        yandex: true,
-        windows: true
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['polyfills', 'vendor'].reverse()
+    }),
+
+    new webpack.LoaderOptionsPlugin({
+      test: /\.ts$/,
+      options: {
+        // prod linting by default
+        tslint: {
+          emitErrors: true,
+          failOnHint: true,
+          resourcePath: 'src'
+        }
       }
     }),
 
     new ForkCheckerPlugin(),
 
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: './src/index.html',
       chunksSortMode: 'dependency'
-    }),
-
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['polyfills', 'vendor'].reverse()
-    }),
-
-    new webpack.optimize.OccurenceOrderPlugin(true)
-  ],
-
-  //TODO is this needed?
-  node: {
-    global: 'window',
-    crypto: 'empty',
-    process: true,
-    module: false,
-    clearImmediate: false,
-    setImmediate: false
-  }
-
+    })
+  ]
 };

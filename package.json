@@ -18,17 +18,16 @@
   "license": "UNLICENSED",
   "engines": {
     "node": ">=6.6.0",
-    "npm": ">=3.8.8"
+    "npm": ">=5.0.3"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/thegreenhouseio/angular2-webpack-seed"
   },
   "scripts": {
-    "build": "rimraf ./build && webpack --config ./webpack.config.prod.js -p --progress --profile --bail",
-    "ci": "export NODE_ENV=production && npm run test && npm run build",
-    "develop": "export NODE_ENV=development && rimraf ./build && webpack-dev-server --config ./webpack.config.dev.js --inline --progress --port 6789",
-    "demo": "npm run build && ./node_modules/.bin/gulp serve",
+    "build": "rimraf ./build && eslint *.js && webpack --config ./webpack.config.prod.js --progress --profile --bail",
+    "develop": "export NODE_ENV=development && rimraf ./build && webpack-dev-server --config ./webpack.config.dev.js --inline --progress",
+    "serve": "npm run build && ./node_modules/.bin/gulp serve",
     "test": "rimraf ./reports && karma start ./karma.conf.js"
   },
   "private": true,
@@ -45,11 +44,14 @@
     "angular2-in-memory-web-api": "0.0.20",
     "bootstrap": "4.0.0-alpha.4",
     "core-js": "2.4.1",
+    "eslint": "^3.19.0",
     "font-awesome": "4.6.3",
-    "font-awesome-webpack": "0.0.4",
+    "font-awesome-webpack": "0.0.5-beta.2",
+    "node-sass": "^4.5.3",
     "reflect-metadata": "0.1.4",
     "rxjs": "5.0.0-beta.12",
     "systemjs": "0.19.37",
+    "webpack": "^2.6.1",
     "zone.js": "0.6.23"
   },
   "devDependencies": {
@@ -80,14 +82,12 @@
     "karma-phantomjs-launcher": "1.0.2",
     "karma-webpack": "1.8.0",
     "less": "2.7.1",
-    "node-sass": "3.10.0",
     "rimraf": "2.5.2",
     "sass-loader": "4.0.2",
+    "tslint-loader": "2.1.5",
     "typescript": "2.0.10",
     "url-loader": "0.5.7",
-    "webpack": "1.13.2",
     "webpack-dev-server": "1.14.1",
-    "webpack-md5-hash": "0.0.5",
     "webpack-merge": "0.14.1"
   }
 }
