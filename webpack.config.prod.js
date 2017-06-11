@@ -1,38 +1,15 @@
-const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.config.common');
-// const ProvidePlugin = require('webpack/lib/ProvidePlugin');
-// const DefinePlugin = require('webpack/lib/DefinePlugin');
-// const NormalModuleReplacementPlugin = require('webpack/lib/NormalModuleReplacementPlugin');
-// const IgnorePlugin = require('webpack/lib/IgnorePlugin');
 const DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
-const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const WebpackMd5Hash = require('webpack-md5-hash');
+const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+const webpackMerge = require('webpack-merge');
 
 module.exports = webpackMerge(commonConfig, {
   devtool: 'source-map',
 
-  output: {
-    path: './build',
-    filename: '[name].[chunkhash].bundle.js',
-    sourceMapFilename: '[name].[chunkhash].bundle.map',
-    chunkFilename: '[id].[chunkhash].chunk.js'
-  },
-
   plugins: [
 
-    new WebpackMd5Hash(),
     new DedupePlugin(),
-
-    //  new DefinePlugin({
-    //  'ENV': JSON.stringify(METADATA.ENV),
-    //  'HMR': METADATA.HMR,
-    //  'process.env': {
-    //    'ENV': JSON.stringify(METADATA.ENV),
-    //    'NODE_ENV': JSON.stringify(METADATA.ENV),
-    //    'HMR': METADATA.HMR,
-    //  }
-    //  }),
 
     new UglifyJsPlugin({
       beautify: false,
@@ -61,35 +38,25 @@ module.exports = webpackMerge(commonConfig, {
         yandex: true,
         windows: true
       }
-    })
-  ],
+    }),
 
-  new webpack.LoaderOptionsPlugin({
-    test: /\.html$/,
-    options: {
-      // prod linting by default
-      htmlLoader: {
-        minimize: true,
-        removeAttributeQuotes: false,
-        caseSensitive: true,
-        customAttrSurround: [
-          [/#/, /(?:)/],
-          [/\*/, /(?:)/],
-          [/\[?\(?/, /(?:)/]
-        ],
-        customAttrAssign: [/\)?\]?=/]
+    new webpack.LoaderOptionsPlugin({
+      test: /\.html$/,
+      options: {
+        // prod linting by default
+        htmlLoader: {
+          minimize: true,
+          removeAttributeQuotes: false,
+          caseSensitive: true,
+          customAttrSurround: [
+            [/#/, /(?:)/],
+            [/\*/, /(?:)/],
+            [/\[?\(?/, /(?:)/]
+          ],
+          customAttrAssign: [/\)?\]?=/]
+        }
       }
-    }
-  })
-
-  // TODO is this needed?
-  // node: {
-  //  global: 'window',
-  //  crypto: 'empty',
-  //  process: false,
-  //  module: false,
-  //  clearImmediate: false,
-  //  setImmediate: false
-  // }
+    })
+  ]
 
 });

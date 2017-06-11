@@ -14,6 +14,13 @@ module.exports = {
     modules: ['./src', 'node_modules']
   },
 
+  output: {
+    path: './build',
+    filename: '[name].[chunkhash].bundle.js',
+    sourceMapFilename: '[name].[chunkhash].bundle.map',
+    chunkFilename: '[id].[chunkhash].chunk.js'
+  },
+
   module: {
     rules: [{
       test: /\.ts$/,
@@ -66,15 +73,4 @@ module.exports = {
       name: ['polyfills', 'vendor'].reverse()
     })
   ]
-
-  //  TODO is this needed?
-  //  node: {
-  //  global: 'window',
-  //  crypto: 'empty',
-  //  process: true,
-  //  module: false,
-  //  clearImmediate: false,
-  //  setImmediate: false
-  //  }
-
 };
