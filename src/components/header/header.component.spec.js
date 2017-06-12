@@ -7,7 +7,7 @@ import { Routes } from '@angular/router';
 
 class MockComponent {}
 
-const MOCK_ROUTES: Routes = [{
+const MOCK_ROUTES = [{
   path: 'home',
   component: MockComponent
 }];
@@ -45,13 +45,13 @@ describe('Header Component Test Suite', () => {
   });
 
   it('should test that the header text element has the expected content', () => {
-    let headerTextElement = nativeElement.querySelector('h2.header-text');
+    const headerTextElement = nativeElement.querySelector('h2.header-text');
 
     expect(headerTextElement.textContent).toBe('The Greenhouse');
   });
 
   it('should test that the io text element has the expected content', () => {
-    let mobileHeaderTextElement = nativeElement.querySelector('p.io-text');
+    const mobileHeaderTextElement = nativeElement.querySelector('p.io-text');
 
     expect(mobileHeaderTextElement.textContent).toBe('.io');
   });

@@ -28,14 +28,14 @@ The following tools are used in the application
 - [Angular][] 2 - as the Front-End framework
 - [Webpack][] 1 - Module loader / bundler, primary build tool
 - [Node][] 6  - local development and build time JavaScript runtime
-- [NPM][] 5 - package manager for build and application dependencies
+- [Yarn][] - package manager for build and application dependencies
 - [TypeScript][] 2.0 - superset of JavaScript for writing application code
 - [Karma][] - task runner for unit and integration testing
 - [Jasmine][] - testing framework
 - [Bootstrap][] 4 (alpha) - Mobile first CSS framework
 
 [Node]: https://nodejs.org/
-[NPM]: https://www.npmjs.com/
+[Yarn]: https://www.yarnpkg.com/
 [Angular]: https://angular.io/
 [TypeScript]: https://www.typescriptlang.org/
 [Webpack]: https://webpack.github.io/
@@ -69,11 +69,11 @@ Recommended plugins to have are:
 1. If you don't already have it, download and install NodeJS (which comes with NPM)
 2. Make sure you have at least version >= 5
 ```bash
-$ npm install -g npm // may need sudo
-$ npm -v
-5.0.3
+$ npm install -g yarn@0.21.3 // may need sudo
+$ yarn --version
+0.21.3
 ```
-3. Now install the project's dependencies by running `$ npm install`
+3. Now install the project's dependencies by running `$ yarn install`
 
 ## Project Layout
 An overview of important files and configurations for the applications
@@ -87,7 +87,7 @@ Also know as "dot" files, these are the build and build configuration files for 
 * _.editorconfig_ - configuration file for EditorConfig IDE plugin
 * _karma.conf.js_ - Karma configuration file
 * _gulpfile.babel.js_ - Gulpfile for startting local production webserver
-* _package.json_ - NPM dependency configuration file, for build related dependencies and defines all runnable scripts and commands
+* _package.json_ - dependency configuration file, for build related dependencies and defines all runnable scripts and commands
 * _tsconfig.json_ - TypeScript compiler configuration file
 * _tslint.json_ - configuration rules for [TS Lint][]
 * _webpack.config.common.js_ - webpack config for managing shared webpack configurations
@@ -116,10 +116,10 @@ This project uses Webpack as the build tool, executed via NPM scripts.  All avai
 section of _package.json_
 
 ### Development
-This will start up a Node (Express) server which watches for changes and "redeploys" as needed.
+This will start up Webpack's [Dev Server](https://webpack.js.org/configuration/dev-server/) which watches for changes and "redeploys" as needed.
 
 ```bash
-$ npm run develop
+$ yarn run develop
 ```
 
 See it in a browser by opening up
@@ -135,7 +135,7 @@ This is the production build task for the project.  It is used prior to deployin
 production version of the application.
 
 ```bash
-$ npm run build
+$ yarn run build
 ```
 
 ###  Testing
@@ -148,7 +148,7 @@ Testing is an important part of software development.  There are three types of 
 To run unit and integration tests, run
 
 ```bash
-$ npm run test
+$ yarn run test
 ```
 
 ### Continuous Integration / Delivery
@@ -156,15 +156,15 @@ For CI / CD, the production task is combined with the testing task with whatever
 
 ```bash
 $ export NODE_ENV=production
-$ npm run test
-$ npm run build
+$ yarn run test
+$ yarn run build
 ```
 
 ### Serve / Run
 To serve a production build locally, like for a demo run:
 
 ```bash
-$ npm run serve
+$ yarn run serve
 ```
 
 **Note: it is recommended you run this command from the master branch or a tag.  By Default this proxies with the
@@ -175,13 +175,13 @@ $ npm run serve
 Build packages (like Webpack) are installed through Yarn into _package.json_, using
 
 ```bash
-$ npm install <package-name>  --dev
+$ yarn add <package-name>  --dev
 ```
 
 Dependencies for the application (like Angular) are installed by running
 
 ```bash
-$ npm install <package-name>
+$ npm add <package-name>
 ```
 
 

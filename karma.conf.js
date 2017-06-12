@@ -4,11 +4,6 @@ const shouldSingleRun = isProductionBuild;
 const browser = isProductionBuild ? 'PhantomJS' : 'Chrome';
 const webpackConfig = require('./webpack.config.common');
 
-// *** webpack hacks *** //
-// use this to allow spec.ts to be processed by Karma.
-// TODO better way to do this?
-// webpackConfig.module.loaders[0].exclude = [];
-
 // TODO issues with karma and CommonChunksPlugin
 // https://github.com/webpack/karma-webpack/issues/24
 webpackConfig.plugins[0] = function() {};
@@ -32,11 +27,12 @@ module.exports = function(config) {
       { pattern: 'node_modules/zone.js/dist/fake-async-test.js', watched: false },
       { pattern: 'node_modules/intl/dist/Intl.js', watched: false },
       { pattern: 'node_modules/intl/locale-data/jsonp/en.js', watched: false },
-      { pattern: 'src/**/*.spec.ts', watched: false }
+      { pattern: 'src/**/**/*.spec.js', watched: true }
     ],
 
     preprocessors: {
-      '**/*.spec.ts': ['webpack', 'coverage']
+      'src/**/*.js': ['webpack', 'babel', 'coverage'],
+      'src/**/*.ts': ['webpack', 'coverage']
     },
 
     webpack: webpackConfig,
