@@ -32,7 +32,7 @@ module.exports = function(config) {
 
     preprocessors: {
       'src/**/*.js': ['webpack', 'babel', 'coverage'],
-      'src/**/*.ts': ['webpack', 'coverage']
+      'src/**/*.ts': ['webpack']
     },
 
     webpack: webpackConfig,
