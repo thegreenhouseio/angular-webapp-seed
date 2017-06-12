@@ -4,15 +4,17 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
+  context: path.resolve(__dirname, 'src'),
+
   entry: {
-    'polyfills': './src/polyfills.ts',
-    'vendor': './src/vendor.ts',
-    'index': './src/index.ts'
+    'polyfills': './polyfills.ts',
+    'vendor': './vendor.ts',
+    'index': './index.ts'
   },
 
   resolve: {
     extensions: ['.ts', '.js', '.json'],
-    modules: ['./src', 'node_modules']
+    modules: ['node_modules']
   },
 
   output: {
@@ -70,7 +72,7 @@ module.exports = {
     new ForkCheckerPlugin(),
 
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './index.html',
       chunksSortMode: 'dependency'
     })
   ]

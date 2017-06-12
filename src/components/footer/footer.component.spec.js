@@ -28,8 +28,8 @@ describe('Footer Component Test Suite', () => {
   });
 
   it('should test getCopyRight() returns expected date string', () => {
-    let currentYear = new Date().getFullYear();
-    let copyright = component.getCopyright();
+    const currentYear = new Date().getFullYear();
+    const copyright = component.getCopyright();
 
     expect(copyright).toEqual('2014 - ' + currentYear);
   });
@@ -40,8 +40,8 @@ describe('Footer Component Test Suite', () => {
   });
 
   it('should test that the component has the correct copyright text after intialization', () => {
-    let currentYear = new Date().getFullYear();
-    let copyrightTextElement = nativeElement.querySelector('p');
+    const currentYear = new Date().getFullYear();
+    const copyrightTextElement = nativeElement.querySelector('p');
 
     fixture.detectChanges();
 

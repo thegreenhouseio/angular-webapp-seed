@@ -10,11 +10,10 @@ import { Routes } from '@angular/router';
 //setup our mocks
 class MockComponent {}
 
-@Injectable()
 class MockPostsService {
   constructor() {}
 
-  public getPosts(): Array<PostInterface> {
+  getPosts() {
     return [{
       id: 1,
       title: 'Post 1 Title',
@@ -34,7 +33,7 @@ class MockPostsService {
   }
 }
 
-const MOCK_ROUTES: Routes = [{
+const MOCK_ROUTES = [{
   path: 'posts',
   component: MockComponent
 }];
@@ -82,12 +81,12 @@ describe('Posts List Component Test Suite', () => {
     //spyOn(postsService, 'getPosts');
     fixture.detectChanges();
 
-    let componentTitle = nativeElement.querySelectorAll('h2');
-    let postContainer = nativeElement.querySelectorAll('div.post');
-    let postHeaders = nativeElement.querySelectorAll('h4.post-header');
-    let postTimes = nativeElement.querySelectorAll('span.post-time');
-    let postSummaries = nativeElement.querySelectorAll('details.post-summary');
-    let postLinks = nativeElement.querySelectorAll('a.post-link');
+    const componentTitle = nativeElement.querySelectorAll('h2');
+    const postContainer = nativeElement.querySelectorAll('div.post');
+    const postHeaders = nativeElement.querySelectorAll('h4.post-header');
+    const postTimes = nativeElement.querySelectorAll('span.post-time');
+    const postSummaries = nativeElement.querySelectorAll('details.post-summary');
+    const postLinks = nativeElement.querySelectorAll('a.post-link');
 
     expect(componentTitle.length).toBe(1);
     expect(postContainer.length).toBe(2);

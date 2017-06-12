@@ -25,7 +25,7 @@
     "url": "https://github.com/thegreenhouseio/angular2-webpack-seed"
   },
   "scripts": {
-    "build": "rimraf ./build && eslint *.js && webpack --config ./webpack.config.prod.js --progress --profile --bail",
+    "build": "rimraf ./build && eslint *.js src/**/*.js && webpack --config ./webpack.config.prod.js --progress --profile --bail",
     "develop": "export NODE_ENV=development && rimraf ./build && webpack-dev-server --config ./webpack.config.develop.js --inline --progress",
     "serve": "npm run build && ./node_modules/.bin/gulp serve",
     "test": "rimraf ./reports && karma start ./karma.conf.js"
@@ -71,13 +71,16 @@
     "html-loader": "0.4.3",
     "html-webpack-plugin": "2.22.0",
     "intl": "1.2.5",
+    "jasmine": "^2.6.0",
     "jasmine-core": "^2.6.3",
     "karma": "^1.7.0",
+    "karma-babel-preprocessor": "^6.0.1",
     "karma-chrome-launcher": "^2.1.1",
     "karma-coverage": "^1.1.1",
     "karma-jasmine": "^1.1.0",
     "karma-junit-reporter": "^1.2.0",
     "karma-phantomjs-launcher": "^1.0.4",
+    "karma-typescript": "^3.0.3",
     "karma-webpack": "^2.0.3",
     "less": "2.7.1",
     "node-sass": "^4.5.3",

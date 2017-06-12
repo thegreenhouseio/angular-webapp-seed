@@ -17,7 +17,7 @@ module.exports = webpackMerge(commonConfig, {
     }),
 
     new FaviconsWebpackPlugin({
-      logo: './src/components/bootstrap/images/favicon.png',
+      logo: './components/bootstrap/images/favicon.png',
       emitStats: true,
       prefix: 'icons/',
       statsFilename: 'icons/stats.json',
