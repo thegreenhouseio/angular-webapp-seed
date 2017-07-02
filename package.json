@@ -26,7 +26,7 @@
   },
   "scripts": {
     "build": "rimraf ./build && eslint *.js && webpack --config ./webpack.config.prod.js -p --progress --profile --bail",
-    "ci": "export NODE_ENV=production && npm run test && npm run build",
+    "ci": "export NODE_ENV=production && npm run build",
     "develop": "webpack-dev-server --config ./webpack.config.develop.js --open --inline --progress",
     "serve": "npm run build && ./node_modules/.bin/gulp serve",
     "test": "rimraf ./reports && karma start ./karma.conf.js"
