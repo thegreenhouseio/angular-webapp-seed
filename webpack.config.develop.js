@@ -36,14 +36,4 @@ module.exports = webpackMerge(commonConfig, {
     }
   }
 
-  //  TODO is this needed?
-  //  node: {
-  //  global: true,
-  //  crypto: 'empty',
-  //  process: true,
-  //  module: false,
-  //  clearImmediate: false,
-  //  setImmediate: false
-  //  }
-
 });

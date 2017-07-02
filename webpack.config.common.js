@@ -29,8 +29,7 @@ module.exports = {
       test: /\.ts$/,
       loaders: [
         'awesome-typescript-loader',
-        'angular2-template-loader',
-        '@angularclass/hmr-loader'
+        'angular2-template-loader'
       ],
       exclude: [/\.(spec|e2e)\.ts$/]
     }, {
