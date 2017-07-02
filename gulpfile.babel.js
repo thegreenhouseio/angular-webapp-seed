@@ -1,6 +1,6 @@
-//https://markgoodyear.com/2015/06/using-es6-with-gulp/
-//Using gulp webserver because it was the best solution I found which support proxies (for the dev environment)
-//and fallback 404 page (for serving index.html like an .htaccess file would)
+// https://markgoodyear.com/2015/06/using-es6-with-gulp/
+// Using gulp webserver because it was the best solution I found which support proxies (for the dev environment)
+// and fallback 404 page (for serving index.html like an .htaccess file would)
 import gulp from 'gulp';
 import webserver from 'gulp-webserver';
 
@@ -10,7 +10,7 @@ const serverOptions = {
   open: '/',
   proxies: [{
     source: '/api',
-    target: 'http://<your-domain>/api'  //change here to proxy to other environments, like prod
+    target: 'http://<your-domain>/api' // change here to proxy to other environments, like prod
   }],
   root: './build/'
 };
