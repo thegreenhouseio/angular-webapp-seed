@@ -25,8 +25,8 @@
     "url": "https://github.com/thegreenhouseio/angular2-webpack-seed"
   },
   "scripts": {
-    "build": "rimraf ./build && eslint *.js src/**/*.js && webpack --config ./webpack.config.prod.js --progress --profile --bail",
-    "develop": "export NODE_ENV=development && rimraf ./build && webpack-dev-server --config ./webpack.config.develop.js --inline --progress",
+    "build": "rimraf ./build && eslint *.js && webpack --config ./webpack.config.prod.js --progress --profile --bail",
+    "develop": "webpack-dev-server --config ./webpack.config.develop.js --open --inline --progress",
     "serve": "npm run build && ./node_modules/.bin/gulp serve",
     "test": "rimraf ./reports && karma start ./karma.conf.js"
   },
@@ -89,7 +89,7 @@
     "tslint-loader": "2.1.5",
     "typescript": "2.0.10",
     "url-loader": "0.5.7",
-    "webpack": "^2.6.1",
+    "webpack": "^3.0.0",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.14.1"
   }
