@@ -29,7 +29,7 @@ module.exports = webpackMerge(commonConfig, {
     outputPath: './build',
     proxy: {
       '/api/*': {
-        target: 'http://<your-domain>',
+        target: 'http://your-domai.com',
         secure: false,
         changeOrigin: true
       }

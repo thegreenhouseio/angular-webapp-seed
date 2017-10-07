@@ -1,7 +1,7 @@
 settings.json
-npm-debug.log
+*.log
 .idea/
 build/
 node_modules/
 reports/
-.vagrant/
+**.DS_Store
