@@ -26,7 +26,7 @@ The following tools are used in the application
 
 - [Angular](https://angular.io/) - as the Front-End framework
 - [webpack](https://webpack.github.io/) 1 - Module loader / bundler, primary build tool
-- [Node](https://nodejs.org/)  - local development and build time JavaScript runtime
+- [Node v6](https://nodejs.org/)  - local development and build time JavaScript runtime
 - [Yarn](https://www.yarnpkg.com/) - package manager for build and application dependencies
 - [TypeScript](https://www.typescriptlang.org/) - superset of JavaScript for writing application code
 - [Karma](https://karma-runner.github.io/1.0/index.html) - task runner for unit and integration testing

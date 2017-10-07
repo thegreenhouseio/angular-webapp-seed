@@ -33,4 +33,6 @@ jobs:
 
       - run:
           name: Run the Build
+          command: export NODE_ENV=production
+          command: yarn run test
           command: yarn run build

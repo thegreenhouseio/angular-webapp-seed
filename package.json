@@ -15,14 +15,10 @@
     "Bootstrap",
     "TypeScript"
   ],
-  "license": "UNLICENSED",
-  "engines": {
-    "node": ">=6.6.0",
-    "npm": ">=5.0.3"
-  },
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thegreenhouseio/angular2-webpack-seed"
+    "url": "https://github.com/thegreenhouseio/angular-webpack-seed"
   },
   "scripts": {
     "build": "rimraf ./build && eslint *.js && webpack --config ./webpack.config.prod.js -p --progress --profile --bail",
