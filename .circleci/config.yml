@@ -32,7 +32,10 @@ jobs:
           command: yarn install
 
       - run:
-          name: Run the Build
-          command: export NODE_ENV=production
-          command: yarn run test
+          name: Run tests
+          command: export NODE_ENV=production && yarn run test
+          command: yarn run build
+
+      - run:
+          name: Run the build
           command: yarn run build
