@@ -24,6 +24,10 @@ jobs:
           - v1-dependencies-
 
       - run:
+          name: Environment
+          command: node --version
+
+      - run:
           name: Install Yarn
           command: npm install -g yarn@~1.0.0
 
