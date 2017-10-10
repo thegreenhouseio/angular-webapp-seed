@@ -22,7 +22,7 @@ jobs:
 
       - run:
           name: Install Host Packages
-          command: apt-get update && apt-get install lxc -y
+          command: sudo apt-get update && sudo apt-get install lxc -y
 
       - run:
           name: Environment
