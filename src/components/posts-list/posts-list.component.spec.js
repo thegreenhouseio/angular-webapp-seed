@@ -98,15 +98,13 @@ describe('Posts List Component Test Suite', () => {
     expect(componentTitle[0].textContent).toBe('Latest Posts');
 
     expect(postHeaders[0].textContent).toContain('Post 1 Title');
-    //TODO https://github.com/thegreenhouseio/angular2-webpack-seed/issues/46
-    //expect(postTimes[0].textContent).toBe('Wednesday, August 24, 2016, 10:14 PM');
+    expect(postTimes[0].textContent).toBe('Wednesday, August 24, 2016, 10:14 PM');
     expect(postSummaries[0].textContent).toBe('Analog is playing at The Tankard this Saturday, with opening act Sean Daley.  Please come join as we prevew some of the new songs on the album.');
     expect(postLinks[0].href).toContain('/posts/1');  //TODO account for host and use toBe?
     expect(postLinks[0].textContent).toBe('Click for full details');
 
     expect(postHeaders[1].textContent).toContain('Post 2 Title');
-    //TODO https://github.com/thegreenhouseio/angular2-webpack-seed/issues/46
-    //expect(postTimes[1].textContent).toBe('Tuesday, August 23, 2016, 6:00 PM');
+    expect(postTimes[1].textContent).toBe('Tuesday, August 23, 2016, 6:00 PM');
     expect(postSummaries[1].textContent).toBe('Post 2 Summary');
     expect(postLinks[1].href).toContain('/posts/2');  //TODO account for host and use toBe?
     expect(postLinks[1].textContent).toBe('Click for full details');

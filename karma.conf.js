@@ -1,11 +1,13 @@
 const isProductionBuild = process.env.NODE_ENV === 'production';
 const shouldWatch = !isProductionBuild;
 const shouldSingleRun = isProductionBuild;
-const browser = isProductionBuild ? 'PhantomJS' : 'Chrome';
 const webpackConfig = require('./webpack.config.common');
 
-// TODO issues with karma and CommonChunksPlugin
+process.env.CHROME_BIN = require('puppeteer').executablePath();
+
+// known issues with karma and CommonChunksPlugin
 // https://github.com/webpack/karma-webpack/issues/24
+// https://github.com/webpack-contrib/karma-webpack/issues/22
 webpackConfig.plugins[0] = function() {};
 
 module.exports = function(config) {
@@ -41,7 +43,7 @@ module.exports = function(config) {
     port: 9876,
     logLevel: logLevel,
     autoWatch: shouldWatch,
-    browsers: [browser],
+    browsers: ['ChromeHeadless'],
     singleRun: shouldSingleRun,
     concurrency: Infinity,
     junitReporter: {
