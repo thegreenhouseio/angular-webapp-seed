@@ -21,7 +21,7 @@
     "url": "https://github.com/thegreenhouseio/angular-webpack-seed"
   },
   "scripts": {
-    "build": "rimraf ./build && eslint *.js && webpack --config ./webpack.config.prod.js -p --progress --profile --bail",
+    "build": "rimraf ./build && eslint *.js src/**/**/*.spec.js && webpack --config ./webpack.config.prod.js -p --progress --profile --bail",
     "develop": "webpack-dev-server --config ./webpack.config.develop.js --open --inline --progress",
     "serve": "npm run build && http-server ./build -o -a localhost -P http://your-domain.com/api",
     "test": "rimraf ./reports && karma start ./karma.conf.js"

@@ -6,7 +6,6 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('Bootstrap Component Test Suite', () => {
   let fixture;
-  let component;
   let debugElement;
   let nativeElement;
 
@@ -16,9 +15,9 @@ describe('Bootstrap Component Test Suite', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BootstrapComponent ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
-    })
+      declarations: [BootstrapComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    });
   }));
 
   beforeEach(() => {

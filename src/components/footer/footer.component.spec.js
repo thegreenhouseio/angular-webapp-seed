@@ -15,8 +15,8 @@ describe('Footer Component Test Suite', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FooterComponent ]
-    })
+      declarations: [FooterComponent]
+    });
   }));
 
   beforeEach(() => {
