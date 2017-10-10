@@ -1,4 +1,5 @@
 settings.json
+.awcache/
 *.log
 .idea/
 build/

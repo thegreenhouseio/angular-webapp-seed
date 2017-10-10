@@ -6,6 +6,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('Bootstrap Component Test Suite', () => {
   let fixture;
+  let component;  // eslint-disable-line no-unused-vars
   let debugElement;
   let nativeElement;
 
