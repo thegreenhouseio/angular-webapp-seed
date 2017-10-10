@@ -20,6 +20,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
+      # https://github.com/Quramy/puppeteer-example#with-docker-based-ci-services
       - run:
           name: Install Host Packages
           command: sudo apt-get update && sudo apt-get install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3
