@@ -6,7 +6,6 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('Bootstrap Component Test Suite', () => {
   let fixture;
-  let component;  // eslint-disable-line no-unused-vars
   let debugElement;
   let nativeElement;
 
@@ -23,7 +22,6 @@ describe('Bootstrap Component Test Suite', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(BootstrapComponent);
-    component = fixture.componentInstance;
 
     debugElement = fixture.debugElement.query(By.css('section.container'));
     nativeElement = debugElement.nativeElement;

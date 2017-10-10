@@ -73,10 +73,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './index.html',
       chunksSortMode: 'dependency'
-    }),
-
-    new webpack.ProvidePlugin({
-      Reflect: 'core-js/es7/reflect'
     })
   ]
 };

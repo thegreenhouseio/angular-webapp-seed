@@ -14,7 +14,6 @@ const MOCK_ROUTES = [{
 // TODO test image banner?
 describe('Header Component Test Suite', () => {
   let fixture;
-  let component;  // eslint-disable-line no-unused-vars
   let debugElement;
   let nativeElement;
 
@@ -31,7 +30,6 @@ describe('Header Component Test Suite', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(HeaderComponent);
-    component = fixture.componentInstance;
 
     debugElement = fixture.debugElement.query(By.css('header'));
     nativeElement = debugElement.nativeElement;
