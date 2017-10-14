@@ -30,7 +30,7 @@ jobs:
 
       - run:
           name: Install Dependencies
-          command: sudo yarn install
+          command: yarn install
 
       - run:
           name: Run Unit Tests
