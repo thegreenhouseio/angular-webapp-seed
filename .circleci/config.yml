@@ -21,8 +21,16 @@ jobs:
           - v1-dependencies-
 
       - run:
+          name: Environment
+          command: node --version
+
+      - run:
+          name: Install Yarn
+          command: sudo npm install -g yarn@~1.0.0
+
+      - run:
           name: Install Dependencies
-          command: yarn install
+          command: sudo yarn install
 
       - run:
           name: Run Unit Tests
