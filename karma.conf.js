@@ -44,6 +44,12 @@ module.exports = function(config) {
     logLevel: logLevel,
     autoWatch: shouldWatch,
     browsers: ['ChromeHeadless'],
+    // you can define custom flags
+    customLaunchers: {
+      ChromeHeadless: {
+        flags: ['--no-sandbox']
+      }
+    },
     singleRun: shouldSingleRun,
     concurrency: Infinity,
     junitReporter: {
