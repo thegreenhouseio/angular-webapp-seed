@@ -47,9 +47,13 @@ module.exports = function(config) {
     customLaunchers: {
       CustomChromeHeadless: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox',  '--disable-setuid-sandbox'] // https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322852784
+        flags: ['--no-sandbox', '--disable-setuid-sandbox'] // https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322852784
       }
     },
+    captureTimeout: 210000,
+    browserDisconnectTolerance: 3,
+    browserDisconnectTimeout : 210000,
+    browserNoActivityTimeout : 210000,
     singleRun: shouldSingleRun,
     concurrency: Infinity,
     junitReporter: {
