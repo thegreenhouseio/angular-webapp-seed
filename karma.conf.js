@@ -43,11 +43,11 @@ module.exports = function(config) {
     port: 9876,
     logLevel: logLevel,
     autoWatch: shouldWatch,
-    browsers: ['ChromeHeadless'],
+    browsers: ['CustomChromeHeadless'],
     customLaunchers: {
-      ChromeHeadless: {
+      CustomChromeHeadless: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox', '--disable-setuid-sandbox'] // https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322852784
+        flags: ['--no-sandbox',  '--disable-setuid-sandbox'] // https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322852784
       }
     },
     singleRun: shouldSingleRun,
