@@ -1,4 +1,3 @@
-const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
@@ -13,8 +12,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.ts', '.js', '.json'],
-    modules: ['node_modules']
+    extensions: ['.ts', '.js', '.json']
   },
 
   output: {
@@ -31,7 +29,7 @@ module.exports = {
         'awesome-typescript-loader',
         'angular2-template-loader'
       ],
-      exclude: [/\.(spec|e2e)\.ts$/]
+      exclude: /node_modules/
     }, {
       test: /\.scss/,
       loader: 'css-to-string-loader!css-loader!sass-loader'
@@ -67,8 +65,6 @@ module.exports = {
         }
       }
     }),
-
-    new ForkCheckerPlugin(),
 
     new HtmlWebpackPlugin({
       template: './index.html',
