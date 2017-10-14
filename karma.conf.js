@@ -44,10 +44,10 @@ module.exports = function(config) {
     logLevel: logLevel,
     autoWatch: shouldWatch,
     browsers: ['ChromeHeadless'],
-    // you can define custom flags
     customLaunchers: {
       ChromeHeadless: {
-        flags: ['--no-sandbox']
+        base: 'Chrome',
+        flags: ['--no-sandbox', '--disable-setuid-sandbox'] // https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322852784
       }
     },
     singleRun: shouldSingleRun,
