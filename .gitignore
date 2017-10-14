@@ -1,7 +1,8 @@
 settings.json
-npm-debug.log
+.awcache/
+*.log
 .idea/
 build/
 node_modules/
 reports/
-.vagrant/
+**.DS_Store

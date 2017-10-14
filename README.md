@@ -14,10 +14,9 @@ A principal motivation in the direction and maintenance of this starter repo wil
 
 ## Setup
 - _README.md_ - project name, Links, sections on release procedure, CI, AWS info
-- _gulpfile.babel.js_ - API proxy
-- _package.json_ - name, description, version
+- _package.json_ - name, description, version, API proxy
 - _karma.conf.js_ - jUnitReporter suite name
-- _webpack.config.dev.js_ - devServer proxy value
+- _webpack.config.develop.js_ - devServer proxy value
 - Configure your project with continuous integration by running _bin/build.sh_
 
 //TODO - discuss environment variables, continuous integration, AWS keys, build scripts
@@ -25,23 +24,15 @@ A principal motivation in the direction and maintenance of this starter repo wil
 ## Tooling
 The following tools are used in the application
 
-- [Angular][] 2 - as the Front-End framework
-- [Webpack][] 1 - Module loader / bundler, primary build tool
-- [Node][] 6  - local development and build time JavaScript runtime
-- [Yarn][] - package manager for build and application dependencies
-- [TypeScript][] 2.0 - superset of JavaScript for writing application code
-- [Karma][] - task runner for unit and integration testing
-- [Jasmine][] - testing framework
-- [Bootstrap][] 4 (alpha) - Mobile first CSS framework
+- [Angular](https://angular.io/) - as the Front-End framework
+- [webpack](https://webpack.github.io/) 1 - Module loader / bundler, primary build tool
+- [Node v6](https://nodejs.org/)  - local development and build time JavaScript runtime
+- [Yarn](https://www.yarnpkg.com/) - package manager for build and application dependencies
+- [TypeScript](https://www.typescriptlang.org/) - superset of JavaScript for writing application code
+- [Karma](https://karma-runner.github.io/1.0/index.html) - task runner for unit and integration testing
+- [Jasmine](http://jasmine.github.io/) - testing framework
+- [Bootstrap](http://v4-alpha.getbootstrap.com/) 4 (alpha) - Mobile first CSS framework
 
-[Node]: https://nodejs.org/
-[Yarn]: https://www.yarnpkg.com/
-[Angular]: https://angular.io/
-[TypeScript]: https://www.typescriptlang.org/
-[Webpack]: https://webpack.github.io/
-[Karma]: https://karma-runner.github.io/1.0/index.html
-[Jasmine]: http://jasmine.github.io/
-[Bootstrap]: http://v4-alpha.getbootstrap.com/
 
 ## Links
 * Repository (Github)- **TODO: your-link-here**
@@ -69,9 +60,9 @@ Recommended plugins to have are:
 1. If you don't already have it, download and install NodeJS (which comes with NPM)
 2. Make sure you have at least version >= 5
 ```bash
-$ npm install -g yarn@0.21.3 // may need sudo
+$ npm install -g yarn@^1.0.0 // may need sudo
 $ yarn --version
-0.21.3
+1.1.0
 ```
 3. Now install the project's dependencies by running `$ yarn install`
 
@@ -91,7 +82,7 @@ Also know as "dot" files, these are the build and build configuration files for 
 * _tsconfig.json_ - TypeScript compiler configuration file
 * _tslint.json_ - configuration rules for [TS Lint][]
 * _webpack.config.common.js_ - webpack config for managing shared webpack configurations
-* _webpack.config.dev.js_ - webpack config for local development
+* _webpack.config.develop.js_ - webpack config for local development
 * _webpack.config.prod.js_ - webpack config for production builds
 
 ### Application Files
@@ -122,7 +113,7 @@ This will start up Webpack's [Dev Server](https://webpack.js.org/configuration/d
 $ yarn run develop
 ```
 
-See it in a browser by opening up
+See it in a browser by opening up (should be automatic)
 
 ```
 http://localhost:1981/

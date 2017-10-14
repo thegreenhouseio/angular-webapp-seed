@@ -3,7 +3,6 @@ import { By } from '@angular/platform-browser';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 import { HeaderComponent } from './header.component';
 import { RouterTestingModule } from '@angular/router/testing';
-import { Routes } from '@angular/router';
 
 class MockComponent {}
 
@@ -12,10 +11,9 @@ const MOCK_ROUTES = [{
   component: MockComponent
 }];
 
-//TODO test image banner?
+// TODO test image banner?
 describe('Header Component Test Suite', () => {
   let fixture;
-  let component;
   let debugElement;
   let nativeElement;
 
@@ -25,14 +23,13 @@ describe('Header Component Test Suite', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ],
-      imports: [ RouterTestingModule.withRoutes(MOCK_ROUTES) ]
-    })
+      declarations: [HeaderComponent],
+      imports: [RouterTestingModule.withRoutes(MOCK_ROUTES)]
+    });
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(HeaderComponent);
-    component = fixture.componentInstance;
 
     debugElement = fixture.debugElement.query(By.css('header'));
     nativeElement = debugElement.nativeElement;

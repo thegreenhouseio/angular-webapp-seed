@@ -1,3 +1,4 @@
+import './polyfills';
 import { APP_ROUTES } from './routes';
 import { BootstrapComponent } from './components/bootstrap/bootstrap.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -6,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeViewComponent } from './views/home/home.component';
 import { HttpModule } from '@angular/http';
-import { NgModule } from '@angular/core';
+import { enableProdMode, NgModule } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { PostsService } from './services/posts.service';
 import { RouterModule } from '@angular/router';
@@ -37,5 +38,9 @@ import { PostDetailsViewComponent } from './views/posts/post-details.component';
 })
 
 class AppModule { }
+
+if (process.env.NODE_ENV === 'production') {
+  enableProdMode();
+}
 
 platformBrowserDynamic().bootstrapModule(AppModule);

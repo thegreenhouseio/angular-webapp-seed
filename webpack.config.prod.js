@@ -1,6 +1,5 @@
 const commonConfig = require('./webpack.config.common');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 
@@ -8,13 +7,6 @@ module.exports = webpackMerge(commonConfig, {
   devtool: 'source-map',
 
   plugins: [
-
-    new UglifyJsPlugin({
-      beautify: false,
-      mangle: { screw_ie8: true, keep_fnames: true },  // eslint-disable-line camelcase
-      compress: { screw_ie8: true }, // eslint-disable-line camelcase
-      comments: false
-    }),
 
     new FaviconsWebpackPlugin({
       logo: './components/bootstrap/images/favicon.png',
@@ -54,7 +46,9 @@ module.exports = webpackMerge(commonConfig, {
           customAttrAssign: [/\)?\]?=/]
         }
       }
-    })
+    }),
+
+    new webpack.optimize.ModuleConcatenationPlugin()
   ]
 
 });
