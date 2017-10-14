@@ -45,8 +45,8 @@ module.exports = function(config) {
     autoWatch: shouldWatch,
     browsers: ['ChromeHeadless'],
     customLaunchers: {
-      ChromeHeadless: {
-        base: 'Chrome',
+      CustomChromeHeadless: {
+        base: 'ChromeHeadless',
         flags: ['--no-sandbox', '--disable-setuid-sandbox'] // https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322852784
       }
     },
