@@ -50,7 +50,7 @@ module.exports = function(config) {
         flags: ['--no-sandbox', '--disable-setuid-sandbox'] // https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322852784
       }
     },
-    captureTimeout: 210000,
+    captureTimeout: 210000, // https://github.com/jasmine/jasmine/issues/1413#issuecomment-334247097
     browserDisconnectTolerance: 3,
     browserDisconnectTimeout: 210000,
     browserNoActivityTimeout: 210000,
