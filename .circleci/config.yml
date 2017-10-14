@@ -6,7 +6,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: thegreenhouse/nodejs-dev
+      - image: thegreenhouse/nodejs-dev:0.1.0
 
     working_directory: ~/repo
 
