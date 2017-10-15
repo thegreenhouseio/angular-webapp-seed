@@ -1,4 +1,5 @@
 const commonConfig = require('./webpack.config.common');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
@@ -46,6 +47,11 @@ module.exports = webpackMerge(commonConfig, {
           customAttrAssign: [/\)?\]?=/]
         }
       }
+    }),
+
+    new ExtractTextPlugin({
+      filename: 'styles.[chunkhash].css',
+      allChunks: true
     }),
 
     new webpack.optimize.ModuleConcatenationPlugin()
